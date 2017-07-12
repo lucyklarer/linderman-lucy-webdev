@@ -14,3 +14,28 @@ body {
     background-color:#428bca;
     color:white;
 }
+
+.widget-glyph-style {
+    background-color:white;
+    padding: 6px;
+    margin: -5px;
+    border-radius: 5px;
+}
+
+.corner-glyph {
+    position: relative;
+}
+
+.position-glyphs {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.navbar-glyphs {
+    position: relative;
+}
+
+.navbar .nav {
+    white-space:nowrap;
+}
