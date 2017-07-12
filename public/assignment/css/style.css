@@ -6,6 +6,11 @@ body {
     padding-top: 70px;
 }
 
-li {
-    margin: 5px;
+.row-spacing {
+    margin-bottom: 15px;
+}
+
+.navbar-style {
+    background-color:#428bca;
+    color:white;
 }
