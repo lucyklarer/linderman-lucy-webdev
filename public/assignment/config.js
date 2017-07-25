@@ -4,7 +4,7 @@
         .config(Config);
     function Config($routeProvider) {
         $routeProvider
-            .when("/login", "/", "default", {
+            .when("/login", {
                 templateUrl: "views/user/templates/login.view.client.html",
                 controller: "LoginController",
                 controllerAs: "model"
