@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+            <span class="navbar-text pull-left">
+                <a href="#/page-list" class="navbar-link">
+            <span class="glyphicon glyphicon-chevron-left">
+            </span>
+                </a>
+            </span>
+        <a class="navbar-brand" href="#">
+            Widgets
+        </a>
+        <span class="navbar-text pull-right navbar-glyphs">
+            <a href="#/widget-chooser" class="navbar-link">
+          <span class="glyphicon glyphicon-plus">
+          </span>
+            </a>
+        </span>
+    </div>
+</nav>
+
+<div ng-repeat="widget in widgets">
+    <div ng-switch="widget.widgetType">
+        <div ng-switch-when="HEADING">
+            <ng-include src="'widget-heading.view.client.html'">
+        </div>
+        <div ng-switch-when="IMAGE">
+            <ng-include src="'widget-image.view.client.html'">
+        </div>
+        <div ng-switch-when="YOUTUBE">
+            <ng-include src="'widget-youtube.view.client.html'">
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <span class="navbar-text pull-right">
+            <a href="#/profile">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </span>
+    </div>
+</nav>

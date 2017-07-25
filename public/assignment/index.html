@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebAppMaker">
 <head>
     <meta charset="UTF-8">
     <title>Assignment Home Page</title>
     <link href="css/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
 </head>
 <body>
+
+<div ng-app="WebAppMaker">
+    <div ng-view></div>
+</div>
+
 <ul>
     <li>
-        <a href="login.html">Login</a>
+        <a href="views/user/templates/login.view.client.html">Login</a>
     </li>
     <li>
-        <a href="profile.html">Profile</a>
+        <a href="views/user/templates/profile.view.client.html">Profile</a>
     </li>
     <li>
-        <a href="register.html">Register</a>
+        <a href="views/user/templates/register.view.client.html">Register</a>
     </li>
 </ul>
 </body>

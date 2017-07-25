@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+
+    <div class="container">
+        <h1>Login</h1>
+        <input ng-model="model.user.username"
+               type="text"
+               class="form-control"
+               placeholder="username"
+               id="username"/>
+        <input ng-model="model.user.password"
+               type="password"
+               class="form-control"
+               placeholder="password"
+               id="password"/>
+        <a ng-click="model.login(user)"
+           class="btn btn-primary btn-block"
+           href="profile.view.client.html">Login</a>
+        <a class="btn btn-success btn-block"
+           href="register.view.client.html">Register</a>
+    </div>
+
