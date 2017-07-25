@@ -12,20 +12,21 @@
 </head>
 <body>
 
-<div ng-app="WebAppMaker">
-    <div ng-view></div>
-</div>
+
 
 <ul>
     <li>
-        <a href="#!/login">Login</a>
+        <a href="#/login">Login</a>
     </li>
     <li>
-        <a href="#!/user/:uid">Profile</a>
+        <a href="#/user/:uid">Profile</a>
     </li>
     <li>
-        <a href="!/register">Register</a>
+        <a href="/register">Register</a>
     </li>
 </ul>
+
+<div ng-view></div>
+
 </body>
 </html>
