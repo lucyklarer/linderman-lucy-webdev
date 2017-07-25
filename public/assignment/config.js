@@ -1,6 +1,6 @@
 (function() {
     angular
-        .module("WebAppMaker")
+        .module("WebAppMaker", ["ngRoute"])
         .config(Config);
     function Config($routeProvider) {
         $routeProvider
@@ -62,6 +62,11 @@
             .when("/user/:uid/website/:wid/page/:pid/widget/:wgid", {
                 templateUrl: "views/widget/templates/widget-edit.view.client.html",
                 controller: "EditWidgetController",
+                controllerAs: "model"
+            })
+            .otherwise({
+                templateUrl: "views/user/templates/login.view.client.html",
+                controller: "LoginController",
                 controllerAs: "model"
             })
     }
