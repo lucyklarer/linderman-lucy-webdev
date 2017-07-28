@@ -16,7 +16,7 @@
             ];
         var api = {
             "createWidget"   : createWidget,
-            "findWidgetByPageId" : findWidgetByPageId,
+            "findWidgetsByPageId" : findWidgetsByPageId,
             "findWidgetById" : findWidgetById,
             "updateWidget" : updateWidget,
             "deleteWidget" : deleteWidget
@@ -26,13 +26,15 @@
             widget.pageId = pageId;
             widgets.push(widget);
         }
-        function findWidgetByPageId(pageId) {
+        function findWidgetsByPageId(pageId) {
             var i;
+            var pageWidgets;
             for (i = 0; i < widgets.length; i++) {
                 if (widgets[i].pageId == pageId) {
-                    return widgets[i];
+                    pageWidgets.add(widgets[i]);
                 }
             }
+            return pageWidgets;
         }
         function findWidgetById(widgetId) {
             var i;

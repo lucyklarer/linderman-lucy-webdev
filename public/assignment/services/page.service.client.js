@@ -11,7 +11,7 @@
             ];
         var api = {
             "createPage"   : createPage,
-            "findPageByWebsiteId" : findPageByWebsiteId,
+            "findPagesByWebsiteId" : findPagesByWebsiteId,
             "findPageById" : findPageById,
             "updatePage" : updatePage,
             "deletePage" : deletePage
@@ -22,13 +22,15 @@
             page._id = (pages.length + 1).toString();
             pages.push(page);
         }
-        function findPageByWebsiteId(websiteId) {
+        function findPagesByWebsiteId(websiteId) {
             var i;
+            var listPages;
             for (i = 0; i < pages.length; i++) {
                 if (pages[i].websiteId == websiteId) {
-                    return pages[i];
+                    listPages.add(pages[i]);
                 }
             }
+            return listPages;
         }
         function findPageById(pageId) {
             var i;
