@@ -6,7 +6,7 @@
         var websites =
             [
                 { _id: "123", name: "Facebook",    developerId: "456", description: "Lorem" },
-                { _id: "234", name: "Tweeter",     developerId: "456", description: "Lorem" },
+                { _id: "234", name: "Twitter",     developerId: "456", description: "Lorem" },
                 { _id: "456", name: "Gizmodo",     developerId: "456", description: "Lorem" },
                 { _id: "890", name: "Go",          developerId: "123", description: "Lorem" },
                 { _id: "567", name: "Tic Tac Toe", developerId: "123", description: "Lorem" },
@@ -15,10 +15,11 @@
             ];
         var api = {
             "createWebsite"   : createWebsite,
-            "findWebsiteByUser" : findWebsiteByUser,
+            "findWebsitesByUser" : findWebsitesByUser,
             "findWebsiteById" : findWebsiteById,
             "updateWebsite" : updateWebsite,
-            "deleteWebsite" : deleteWebsite
+            "deleteWebsite" : deleteWebsite,
+            "listUserWebsites" : listUserWebsites
         };
         return api;
         function createWebsite(userId, website) {
@@ -27,24 +28,28 @@
             websites.push(website);
             log.console("adding website " + website.name);
         }
-        function findWebsiteByUser(userId) {
+        function findWebsitesByUser(userId) {
             var i;
+            var userWebsites;
             for (i = 0; i < websites.length; i++) {
                 if (websites[i].developerId === userId) {
                     log.console("found website " + websites[i].name);
-                    return websites[i];
+                    userWebsites.add(websites[i]);
                 }
             }
-            log.console("couldn't find website");
+            log.console("couldn't find websites");
+            return userWebsites;
         }
         function findWebsiteById(websiteId) {
             var i;
+
             for (i = 0; i < websites.length; i++) {
                 if (websites[i]._id === websiteId) {
                     log.console("found website " + websites[i].name);
                     return websites[i];
                 }
             }
+
             log.console("couldn't find website");
         }
         function updateWebsite(websiteId, website) {
