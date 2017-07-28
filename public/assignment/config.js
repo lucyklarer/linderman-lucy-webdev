@@ -3,9 +3,8 @@
         .module("WebAppMaker", ["ngRoute"])
         .config(Config);
     function Config($routeProvider, $locationProvider) {
-        $locationProvider.hashPrefix('');
         $routeProvider
-            .when("/login", {
+            .when("login", {
                 templateUrl: "views/user/templates/login.view.client.html",
                 controller: "LoginController",
                 controllerAs: "model"
