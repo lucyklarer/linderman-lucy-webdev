@@ -9,7 +9,7 @@
         var vm = this;
         vm.userId = $routeParams["userId"];
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(userId);
+            vm.websites = WebsiteService.findWebsiteByUser(userId);
         }
         init();
     }
@@ -20,7 +20,7 @@
         vm.newWebsite = newWebsite;
 
         function newWebsite() {
-            addWebsite = { _id: "", name: vm.website.name,    developerId: userId, description: vm.website.description};
+            var addWebsite = { _id: "", name: vm.website.name,    developerId: userId, description: vm.website.description};
             WebsiteService.createWebsite(userId, addWebsite);
         }
     }
