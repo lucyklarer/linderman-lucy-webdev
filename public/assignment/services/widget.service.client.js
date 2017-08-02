@@ -43,6 +43,7 @@
                     return widgets[i];
                 }
             }
+            return null;
         }
         function updateWidget(widgetId, widget) {
             var i;

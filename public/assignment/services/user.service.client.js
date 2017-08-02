@@ -2,6 +2,7 @@
     angular
         .module("WebAppMaker")
         .factory("UserService", UserService);
+
     function UserService() {
         var users =
             [
@@ -21,11 +22,11 @@
         return api;
         function createUser(user) {
             var exist = findUserByUsername(user.username);
-            if(!exist) {
+            if(exist===null) {
                 user._id = (users.length + 1).toString();
                 user.firstName = "";
                 user.lastName = "";
-                users.push(user)
+                users.push(user);
             }
         }
         function findUserById(id) {
@@ -35,6 +36,7 @@
                     return users[i];
                 }
             }
+            return null;
         }
         function findUserByUsername(username) {
             var i;
@@ -43,6 +45,7 @@
                     return users[i];
                 }
             }
+            return null;
         }
         function findUserByCredentials(username, password) {
             var i;
@@ -51,6 +54,7 @@
                     return users[i];
                 }
             }
+            return null;
         }
         function updateUser(userID, user) {
             var i;

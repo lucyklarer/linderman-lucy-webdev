@@ -51,6 +51,7 @@
             }
 
             log.console("couldn't find website");
+            return null;
         }
         function updateWebsite(websiteId, website) {
             var i;

@@ -39,6 +39,7 @@
                     return pages[i];
                 }
             }
+            return null;
         }
         function updatePage(pageId, page) {
             var i;
