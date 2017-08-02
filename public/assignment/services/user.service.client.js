@@ -31,7 +31,7 @@
         function findUserById(id) {
             var i;
             for (i = 0; i < users.length; i++) {
-                if (users[i]._id == id) {
+                if (users[i]._id === id) {
                     return users[i];
                 }
             }
@@ -39,7 +39,7 @@
         function findUserByUsername(username) {
             var i;
             for (i = 0; i < users.length; i++) {
-                if (users[i].username == username) {
+                if (users[i].username === username) {
                     return users[i];
                 }
             }
@@ -47,7 +47,7 @@
         function findUserByCredentials(username, password) {
             var i;
             for (i = 0; i < users.length; i++) {
-                if (users[i].username == username && users[i].password == password) {
+                if (users[i].username === username && users[i].password === password) {
                     return users[i];
                 }
             }
@@ -55,7 +55,7 @@
         function updateUser(userID, user) {
             var i;
             for (i = 0; i < users.length; i++) {
-                if (users[i]._id == userID) {
+                if (users[i]._id === userID) {
                     users[i] = user;
                 }
             }
@@ -63,7 +63,7 @@
         function deleteUser(userID) {
             var i;
             for (i = 0; i < users.length; i++) {
-                if (users[i]._id == userID) {
+                if (users[i]._id === userID) {
                     users.splice(i, 1);
                 }
             }

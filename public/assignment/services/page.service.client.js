@@ -26,7 +26,7 @@
             var i;
             var listPages;
             for (i = 0; i < pages.length; i++) {
-                if (pages[i].websiteId == websiteId) {
+                if (pages[i].websiteId === websiteId) {
                     listPages.add(pages[i]);
                 }
             }
@@ -35,7 +35,7 @@
         function findPageById(pageId) {
             var i;
             for (i = 0; i < pages.length; i++) {
-                if (pages[i]._id == pageId) {
+                if (pages[i]._id === pageId) {
                     return pages[i];
                 }
             }
@@ -43,7 +43,7 @@
         function updatePage(pageId, page) {
             var i;
             for (i = 0; i < pages.length; i++) {
-                if (pages[i]._id == pageId) {
+                if (pages[i]._id === pageId) {
                     pages[i] = page;
                 }
             }
@@ -51,7 +51,7 @@
         function deletePage(pageId) {
             var i;
             for (i = 0; i < pages.length; i++) {
-                if (pages[i]._id == pageId) {
+                if (pages[i]._id === pageId) {
                     pages.splice(i, 1);
                 }
             }
