@@ -10,9 +10,9 @@
         vm.login = login;
 
         function login(user) {
-            user = UserService.findUserByCredentials(user.username, user.password);
-            if(user) {
-                $location.url("/user/" + user._id);
+            var findUser = UserService.findUserByCredentials(user.username, user.password);
+            if(findUser!==null) {
+                $location.url("/user/" + findUser._id);
             } else {
                 vm.alert = "Unable to login";
             }
@@ -30,6 +30,9 @@
         var vm = this;
         vm.userId = $routeParams["userId"];
         vm.password = $routeParams["password"];
+        vm.username = $routeParams["username"];
+        vm.firstName = $routeParams["firstName"];
+        vm.lastName = $routeParams["lastName"];
         vm.updateProfile = updateProfile;
 
         function init() {
@@ -38,7 +41,7 @@
         init();
 
         function updateProfile() {
-            updateUser = {_id: userId, username: vm.user.username, password: vm.password, firstName: vm.user.firstName, lastName: vm.user.lastName};
+            updateUser = {_id: userId, username: vm.username, password: vm.password, firstName: vm.firstName, lastName: vm.lastName};
             UserService.updateUser(userId, updateUser);
         }
     }
