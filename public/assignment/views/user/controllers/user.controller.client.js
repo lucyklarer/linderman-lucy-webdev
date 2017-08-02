@@ -11,7 +11,7 @@
 
     function LoginController($location, UserService) {
         var vm = this;
-        vm.login = login;
+        /*vm.login = login;
 
         function login(user) {
             var findUser = UserService.findUserByCredentials(user.username, user.password);
@@ -20,7 +20,7 @@
             } else {
                 vm.alert = "Unable to login";
             }
-        }
+        }*/
     }
 
     console.log("and here we are");

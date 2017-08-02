@@ -14,7 +14,7 @@
         }
         init();
     }
-    function NewWebsiteController($scope) {
+    function NewWebsiteController() {
         var vm = this;
         vm.userId = $routeParams["userId"];
 
