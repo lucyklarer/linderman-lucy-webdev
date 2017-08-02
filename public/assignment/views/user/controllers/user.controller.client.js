@@ -7,7 +7,7 @@
         .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
 
-    console.log("made it this far");
+    /*console.log("made it this far");
 
     function LoginController($location, UserService) {
         var vm = this;
@@ -54,6 +54,6 @@
             updateUser = {_id: userId, username: vm.username, password: vm.password, firstName: vm.firstName, lastName: vm.lastName};
             UserService.updateUser(userId, updateUser);
         }
-    }
+    }*/
     console.log("started at the top now we here");
 })();
