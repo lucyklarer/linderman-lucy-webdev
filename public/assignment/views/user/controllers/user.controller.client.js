@@ -1,9 +1,13 @@
 (function() {
+    console.log("loaded services");
+
     angular
         .module("WebAppMaker")
         .controller("LoginController", LoginController)
         .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
+
+    console.log("made it this far");
 
     function LoginController($location, UserService) {
         var vm = this;
@@ -18,6 +22,9 @@
             }
         }
     }
+
+    console.log("and here we are");
+
     function RegisterController($routeParams, UserService) {
         var vm = this;
         vm.register = register;
@@ -26,6 +33,9 @@
             UserService.createUser(user);
         }
     }
+
+    console.log("now we're here");
+
     function ProfileController($routeParams, UserService) {
         var vm = this;
         vm.userId = $routeParams["userId"];
@@ -45,4 +55,5 @@
             UserService.updateUser(userId, updateUser);
         }
     }
+    console.log("started at the top now we here");
 })();
