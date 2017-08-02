@@ -7,7 +7,7 @@
         .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
 
-    /*console.log("made it this far");
+    console.log("made it this far");
 
     function LoginController($location, UserService) {
         var vm = this;
@@ -25,7 +25,7 @@
 
     console.log("and here we are");
 
-    function RegisterController($routeParams, UserService) {
+    /*function RegisterController($routeParams, UserService) {
         var vm = this;
         vm.register = register;
 
