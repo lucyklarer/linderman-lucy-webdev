@@ -27,6 +27,7 @@
                 user.firstName = "";
                 user.lastName = "";
                 users.push(user);
+                log.console("created user " + user.username)
             }
         }
         function findUserById(id) {
