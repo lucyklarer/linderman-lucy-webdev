@@ -25,7 +25,7 @@
             website.developerId = userId;
             website._id = (websites.length + 1).toString();
             websites.push(website);
-            log.console("adding website " + website.name);
+            console.log("adding website " + website.name);
         }
         function findWebsitesByUser(userId) {
             var i;
@@ -33,11 +33,11 @@
             userWebsites = null;
             for (i = 0; i < websites.length; i++) {
                 if (websites[i].developerId === userId) {
-                    log.console("found website " + websites[i].name);
+                    console.log("found website " + websites[i].name);
                     userWebsites.add(websites[i]);
                 }
             }
-            log.console("couldn't find websites");
+            console.log("couldn't find websites");
             return userWebsites;
         }
         function findWebsiteById(websiteId) {
@@ -45,12 +45,12 @@
 
             for (i = 0; i < websites.length; i++) {
                 if (websites[i]._id === websiteId) {
-                    log.console("found website " + websites[i].name);
+                    console.log("found website " + websites[i].name);
                     return websites[i];
                 }
             }
 
-            log.console("couldn't find website");
+            console.log("couldn't find website");
             return null;
         }
         function updateWebsite(websiteId, website) {
@@ -58,22 +58,22 @@
             for (i = 0; i < websites.length; i++) {
                 if (websites[i]._id === websiteId) {
                     websites[i] = website;
-                    log.console("updated website " + websites[i].name);
+                    console.log("updated website " + websites[i].name);
                     return;
                 }
             }
-            log.console("couldn't update website");
+            console.log("couldn't update website");
         }
         function deleteWebsite(websiteId) {
             var i;
             for (i = 0; i < websites.length; i++) {
                 if (websites[i]._id === websiteId) {
                     websites.splice(i, 1);
-                    log.console("deleted website " + websiteId);
+                    console.log("deleted website " + websiteId);
                     return;
                 }
             }
-            log.console("couldn't delete website");
+            console.log("couldn't delete website");
         }
     }
 })();
