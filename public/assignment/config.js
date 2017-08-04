@@ -2,11 +2,11 @@
     angular
         .module("WebAppMaker", ["ngRoute"])
         .config(Config);
-    function Config($routeProvider, $locationProvider) {
+    function Config($routeProvider) {
         $routeProvider
             .when("/login", {
                 templateUrl: "views/user/templates/login.view.client.html",
-                controller: "LoginController",
+                controller: "LoginControl",
                 controllerAs: "model"
             })
             .when("/register", {
