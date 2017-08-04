@@ -11,9 +11,9 @@
         console.log("entering websitelistcontroller");
         var vm = this;
         vm.userId = "456";
-        console.log("userId is " + userId);
+        console.log("userId is " + vm.userId);
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(userId);
+            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
         }
         init();
     }
