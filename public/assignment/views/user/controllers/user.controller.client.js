@@ -23,13 +23,10 @@
         }*/
     //}
 
-    function hello() {
-
-    }
 
     console.log("and here we are");
 
-    /*function RegisterController($routeParams, UserService) {
+    function RegisterController($routeParams, UserService) {
         var vm = this;
         vm.register = register;
 
@@ -58,6 +55,6 @@
             updateUser = {_id: userId, username: vm.username, password: vm.password, firstName: vm.firstName, lastName: vm.lastName};
             UserService.updateUser(userId, updateUser);
         }
-    }*/
+    }
     console.log("started at the top now we here");
 })();
