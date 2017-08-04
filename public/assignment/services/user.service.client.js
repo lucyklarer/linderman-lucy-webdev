@@ -19,7 +19,7 @@
             "updateUser" : updateUser,
             "deleteUser" : deleteUser
     };
-        return api;
+
         function createUser(user) {
             var exist = findUserByUsername(user.username);
             if(exist===null) {
@@ -72,5 +72,6 @@
                 }
             }
         }
+        return api;
     }
 })();

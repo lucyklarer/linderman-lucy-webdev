@@ -18,8 +18,7 @@
             "findWebsitesByUser" : findWebsitesByUser,
             "findWebsiteById" : findWebsiteById,
             "updateWebsite" : updateWebsite,
-            "deleteWebsite" : deleteWebsite,
-            "listUserWebsites" : listUserWebsites
+            "deleteWebsite" : deleteWebsite
         };
         return api;
         function createWebsite(userId, website) {
