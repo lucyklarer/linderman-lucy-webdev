@@ -5,7 +5,10 @@
         .controller("NewWebsiteController", NewWebsiteController)
         .controller("EditWebsiteController", EditWebsiteController);
 
+    console.log("website controller");
+
     function WebsiteListController($routeParams, WebsiteService) {
+        console.log("entering websitelistcontroller");
         var vm = this;
         vm.userId = "456";
         console.log("userId is " + userId);
