@@ -23,7 +23,7 @@
         }*/
     //}
 
-    function LoginController() {
+    function hello() {
 
     }
 
