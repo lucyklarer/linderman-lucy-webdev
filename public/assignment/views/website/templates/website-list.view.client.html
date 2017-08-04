@@ -20,14 +20,14 @@
             </span>
     </div>
 </nav>
-
+<div ng-controller="WebsiteListController">
 <div class="container">
     <div ng-repeat="website in model.websites">
         <div class="row row-spacing">
             <div class="col-xs-12">
                 <div class="text-left">
                     <a href="#/user/:uid/website/:wid/page">
-                        {{website}}
+                        {{website.name}}
                     </a>
                     <div class="pull-right">
                         <a href="#/user/:uid/website/:wid">
@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 <nav class="navbar navbar-style navbar-fixed-bottom">
     <div class="container-fluid">
