@@ -30,14 +30,12 @@
         function findWebsitesByUser(userId) {
             var i;
             var userWebsites;
-            userWebsites = null;
             for (i = 0; i < websites.length; i++) {
                 if (websites[i].developerId === userId) {
                     console.log("found website " + websites[i].name);
                     userWebsites.add(websites[i]);
                 }
             }
-            console.log("couldn't find websites");
             return userWebsites;
         }
         function findWebsiteById(websiteId) {
