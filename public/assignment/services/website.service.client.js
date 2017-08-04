@@ -28,7 +28,7 @@
             log.console("adding website " + website.name);
         }
         function findWebsitesByUser(userId) {
-            /*var i;
+            var i;
             var userWebsites;
             userWebsites = null;
             for (i = 0; i < websites.length; i++) {
@@ -37,8 +37,8 @@
                     userWebsites.add(websites[i]);
                 }
             }
-            log.console("couldn't find websites");*/
-            return websites;
+            log.console("couldn't find websites");
+            return userWebsites;
         }
         function findWebsiteById(websiteId) {
             var i;
