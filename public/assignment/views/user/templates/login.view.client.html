@@ -13,9 +13,11 @@
                class="form-control"
                placeholder="password"
                id="password"/>
+    <p ng-bind="model.user.username"></p>
         <a ng-click="model.login(user)"
            class="btn btn-primary btn-block"
            href="#/user/:uid">Login</a>
+
         <a class="btn btn-success btn-block"
            href="#/register">Register</a>
     </div>

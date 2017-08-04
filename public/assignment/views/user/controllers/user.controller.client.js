@@ -14,11 +14,11 @@
         vm.login = login;
 
         function login(user) {
-            var findUser = UserService.findUserByCredentials(user.username, user.password);
+            var findUser = UserService.findUserByCredentials(model.user.username, model.user.password);
             if(findUser!==null) {
                 $location.url("/user/" + findUser._id);
             } else {
-                vm.alert = "Unable to login";
+                vm.alert = "Unable to login " + model.user.username;
             }
         }
     }
