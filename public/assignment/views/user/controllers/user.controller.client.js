@@ -9,8 +9,8 @@
 
     console.log("made it this far");
 
-    //function LoginController($location, UserService) {
-        /*var vm = this;
+    function LoginControl($location, UserService) {
+        var vm = this;
         vm.login = login;
 
         function login(user) {
@@ -20,11 +20,8 @@
             } else {
                 vm.alert = "Unable to login";
             }
-        }*/
-    //}
-
-    function LoginControl() {}
-
+        }
+    }
 
     console.log("and here we are");
 
