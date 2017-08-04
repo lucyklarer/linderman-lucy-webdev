@@ -29,11 +29,11 @@
         }
         function findWebsitesByUser(userId) {
             var i;
-            var userWebsites;
+            var userWebsites = [];
             for (i = 0; i < websites.length; i++) {
                 if (websites[i].developerId === userId) {
                     console.log("found website " + websites[i].name);
-                    userWebsites.add(websites[i]);
+                    userWebsites.push(websites[i]);
                 }
             }
             return userWebsites;
