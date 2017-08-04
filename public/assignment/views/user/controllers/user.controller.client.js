@@ -23,10 +23,12 @@
         }*/
     //}
 
+    function LoginController() {}
+
 
     console.log("and here we are");
 
-    function RegisterController($routeParams, UserService) {
+    function RegisterController(UserService) {
         var vm = this;
         vm.register = register;
 
