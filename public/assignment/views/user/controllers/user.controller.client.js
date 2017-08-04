@@ -3,7 +3,7 @@
 
     angular
         .module("WebAppMaker")
-        .controller("LoginController", LoginController)
+        .controller("LoginControl", LoginControl)
         .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
 
@@ -23,7 +23,7 @@
         }*/
     //}
 
-    function LoginController() {}
+    function LoginControl() {}
 
 
     console.log("and here we are");
