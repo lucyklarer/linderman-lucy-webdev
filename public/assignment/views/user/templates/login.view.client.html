@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-    <div class="container">
+    <div ng-controller="LoginControl" class="container">
         <h1>Login</h1>
         <input ng-model="model.user.username"
                type="text"
@@ -13,8 +13,6 @@
                class="form-control"
                placeholder="password"
                id="password"/>
-    <p>Name: {{model.user.username}}</p>
-
         <a ng-click="model.login(user)"
            class="btn btn-primary btn-block"
            href="#/user/:uid">Login</a>
