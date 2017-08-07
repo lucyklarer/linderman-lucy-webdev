@@ -26,6 +26,7 @@
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
         }
+        init();
 
         vm.newWebsite = newWebsite;
 
@@ -45,6 +46,7 @@
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
         }
+        init();
 
         function updateWebsite(website) {
             WebsiteService.updateWebsite(vm.websiteId, website);
