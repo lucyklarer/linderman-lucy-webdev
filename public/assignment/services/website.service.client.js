@@ -63,8 +63,10 @@
             console.log("couldn't update website");
         }
         function deleteWebsite(websiteId) {
+            console.log("trying to delete website with id " + websiteId);
             var i;
             for (i = 0; i < websites.length; i++) {
+                console.log("looking at website with id " + websites[i]._id);
                 if (websites[i]._id === websiteId) {
                     websites.splice(i, 1);
                     console.log("deleted website " + websiteId);
