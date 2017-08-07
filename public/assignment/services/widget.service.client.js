@@ -28,10 +28,10 @@
         }
         function findWidgetsByPageId(pageId) {
             var i;
-            var pageWidgets;
+            var pageWidgets = [];
             for (i = 0; i < widgets.length; i++) {
                 if (widgets[i].pageId === pageId) {
-                    pageWidgets.add(widgets[i]);
+                    pageWidgets.push(widgets[i]);
                 }
             }
             return pageWidgets;
