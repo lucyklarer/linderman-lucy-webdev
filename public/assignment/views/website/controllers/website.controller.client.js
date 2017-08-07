@@ -32,7 +32,7 @@
         vm.newWebsite = newWebsite;
 
         function newWebsite() {
-            var addWebsite = { _id: "", name: vm.model.website.name,    developerId: userId, description: vm.model.website.description};
+            var addWebsite = { _id: "", name: vm.website.name,    developerId: userId, description: vm.website.description};
             WebsiteService.createWebsite(userId, addWebsite);
         }
     }
