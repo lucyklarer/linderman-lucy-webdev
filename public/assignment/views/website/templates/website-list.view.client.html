@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-
+<div ng-controller="WebsiteListController">
 <nav class="navbar navbar-style navbar-fixed-top">
     <div class="container-fluid">
             <span class="navbar-text navbar-style pull-left">
@@ -20,7 +20,7 @@
             </span>
     </div>
 </nav>
-<div ng-controller="WebsiteListController">
+
 <div class="container">
     <div ng-repeat="website in model.websites">
         <div class="row row-spacing">
@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <nav class="navbar navbar-style navbar-fixed-bottom">
     <div class="container-fluid">
@@ -51,3 +51,4 @@
         </span>
     </div>
 </nav>
+</div>
