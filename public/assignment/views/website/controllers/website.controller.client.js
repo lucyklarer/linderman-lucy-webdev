@@ -17,7 +17,7 @@
         }
         init();
     }
-    function NewWebsiteController() {
+    function NewWebsiteController(WebsiteService) {
         var vm = this;
         //vm.userId = $routeParams["userId"];
 
@@ -35,11 +35,11 @@
             WebsiteService.createWebsite(userId, addWebsite);
         }
     }
-    function EditWebsiteController($routeProvider, WebsiteService) {
+    function EditWebsiteController($routeParams, WebsiteService) {
         var vm = this;
         vm.userId = "456";
         //vm.userId = $routeParams["userId"];
-        vm.websiteId = $routeProvider.websiteId;
+        vm.websiteId = $routeParams["websiteId"];
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
 
