@@ -7,10 +7,10 @@
 
     function PageListController($routeParams, PageService) {
         var vm = this;
-        vm.websiteId = $routeParams["websiteId"];
+        //vm.websiteId = $routeParams["websiteId"];
+        vm.websiteId = "456";
         function init() {
-            //vm.pages = PageService.findPagesByWebsiteId(websiteId);
-            vm.pages = PageService.pages;
+            vm.pages = PageService.findPagesByWebsiteId(websiteId);
         }
         init();
     }
@@ -21,7 +21,7 @@
         vm.newPage = newPage;
 
         function newPage() {
-            addPage = { _id: "", name: vm.page.name, websiteId: "456", description: vm.page.title}
+            var addPage = { _id: "", name: vm.page.name, websiteId: vm.websiteId, description: vm.page.title};
             PageService.createPage(websiteId, addPage)
         }
     }

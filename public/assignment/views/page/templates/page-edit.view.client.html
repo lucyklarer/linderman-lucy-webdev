@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
+<div ng-controller="EditPageController">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
             <p class="navbar-text pull-left">
-                <a href="page-list.view.client.html" class="navbar-link">
+                <a href="#/user/:uid/website/:wid/page" class="navbar-link">
             <span class="glyphicon glyphicon-chevron-left">
             </span>
                 </a>
@@ -13,7 +13,7 @@
                 Edit Page
             </a>
             <p class="navbar-text pull-right navbar-glyphs">
-                <a ng-click="model.updatePage()" href="page-list.view.client.html" class="navbar-link">
+                <a ng-click="model.updatePage()" href="#/user/:uid/website/:wid/page" class="navbar-link">
           <span class="glyphicon glyphicon-ok">
           </span>
                 </a>
@@ -36,15 +36,16 @@
 
     <a ng-click="model.deletePage()"
        class="btn btn-danger  btn-block"
-       href="page-list.view.client.html">Delete</a>
+       href="#/user/:uid/website/:wid/page">Delete</a>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <span class="navbar-text pull-right">
-            <a href="../../user/templates/profile.view.client.html">
+            <a href="/user/:uid">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </span>
     </div>
 </nav>
+</div>
