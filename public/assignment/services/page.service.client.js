@@ -27,7 +27,7 @@
             var listPages;
             for (i = 0; i < pages.length; i++) {
                 if (pages[i].websiteId === websiteId) {
-                    listPages.add(pages[i]);
+                    listPages.push(pages[i]);
                 }
             }
             return listPages;
