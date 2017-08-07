@@ -24,7 +24,7 @@
         }
         function findPagesByWebsiteId(websiteId) {
             var i;
-            var listPages;
+            var listPages = [];
             for (i = 0; i < pages.length; i++) {
                 if (pages[i].websiteId === websiteId) {
                     listPages.push(pages[i]);
