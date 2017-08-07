@@ -22,11 +22,14 @@
 
 <div ng-repeat="widget in model.widgets">
     <div ng-switch="widget.widgetType">
-        <div ng-switch-when="HEADING" ng-include="'widget-heading.view.client.html'">
+        <div ng-switch-when="HEADING">
+            <div ng-include="'widget-heading.view.client.html'"></div>
         </div>
-        <div ng-switch-when="IMAGE" ng-include="'widget-image.view.client.html'">
+        <div ng-switch-when="IMAGE">
+            <div ng-include="'widget-image.view.client.html'"></div>
         </div>
-        <div ng-switch-when="YOUTUBE" ng-include="'widget-youtube.view.client.html'">
+        <div ng-switch-when="YOUTUBE">
+            <div ng-include="'widget-youtube.view.client.html'"></div>
         </div>
     </div>
 </div>
