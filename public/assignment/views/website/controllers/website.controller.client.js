@@ -32,8 +32,8 @@
         vm.newWebsite = newWebsite;
 
         function newWebsite() {
-            var addWebsite = { _id: "", name: vm.website.name,    developerId: userId, description: vm.website.description};
-            WebsiteService.createWebsite(userId, addWebsite);
+            var addWebsite = { _id: "", name: vm.website.name,    developerId: vm.userId, description: vm.website.description};
+            WebsiteService.createWebsite(vm.userId, addWebsite);
         }
     }
     function EditWebsiteController($routeParams, WebsiteService) {
