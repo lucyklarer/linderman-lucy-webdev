@@ -39,7 +39,7 @@
         var vm = this;
         vm.userId = "456";
         //vm.userId = $routeParams["userId"];
-        vm.websiteId = $routeParams["websiteId"];
+        //vm.websiteId = $routeParams["websiteId"];
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
 

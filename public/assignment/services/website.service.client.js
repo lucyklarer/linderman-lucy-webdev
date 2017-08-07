@@ -22,8 +22,9 @@
         };
         return api;
         function createWebsite(userId, website) {
-            website.developerId = userId;
-            website._id = (websites.length + 1).toString();
+            //website.developerId = userId;
+            website.developerId = "456";
+            website._id = "000";
             websites.push(website);
             console.log("adding website " + website.name);
         }
