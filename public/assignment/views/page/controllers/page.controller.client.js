@@ -6,11 +6,13 @@
         .controller("EditPageController", EditPageController);
 
     function PageListController($routeParams, PageService) {
+        console.log("entering page list controller");
         var vm = this;
         //vm.websiteId = $routeParams["websiteId"];
         vm.websiteId = "456";
+        console.log("website id is " + vm.websiteId);
         function init() {
-            vm.pages = PageService.findPagesByWebsiteId(websiteId);
+            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
         }
         init();
     }
@@ -22,7 +24,7 @@
 
         function newPage() {
             var addPage = { _id: "", name: vm.page.name, websiteId: vm.websiteId, description: vm.page.title};
-            PageService.createPage(websiteId, addPage)
+            PageService.createPage(vm.websiteId, addPage)
         }
     }
     function EditPageController($routeParams, PageService) {

@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a href="../../website/templates/website-list.view.client.html" class="navbar-link">
+            <a href="#/user/:uid/website" class="navbar-link">
             <span class="glyphicon glyphicon-chevron-left">
             </span>
             </a>
@@ -26,11 +26,11 @@
         <div class="row row-spacing">
             <div class="col-xs-12">
                 <div class="text-left">
-                    <a href="../../widget/templates/widget-list.view.client.html">
+                    <a href="#/user/:uid/website/:wid/page/:pid/widget">
                         {{page.name}}
                     </a>
                     <div class="pull-right">
-                        <a href="page-edit.view.client.html">
+                        <a href="#/user/:uid/website/:wid/page/:pid">
                     <span class="glyphicon glyphicon-cog">
                     </span>
                         </a>
