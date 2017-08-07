@@ -17,8 +17,9 @@
         init();
     }
 
-    function NewPageController() {
+    function NewPageController($routeParams) {
         var vm = this;
+        vm.page = {};
         vm.websiteId = $routeParams["websiteId"];
         vm.newPage = newPage;
 
@@ -29,6 +30,7 @@
     }
     function EditPageController($routeParams, PageService) {
         var vm = this;
+        vm.page = {};
         vm.pageId = $routeParams["pageId"];
         vm.websiteId = $routeParams["websiteId"];
         vm.updatePage = updatePage;

@@ -7,10 +7,10 @@
 
     function WidgetListController($routeParams, WidgetService) {
         var vm = this;
-        vm.pageId = $routeParams["pageId"];
+        //vm.pageId = $routeParams["pageId"];
+        vm.pageId = "321";
         function init() {
-            //vm.widgets = WidgetService.findWidgetsByPageId(pageId);
-            vm.widgets = WidgetService.widgets;
+            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
         }
         init();
     }
