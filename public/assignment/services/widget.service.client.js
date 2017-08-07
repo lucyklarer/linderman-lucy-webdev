@@ -27,10 +27,12 @@
             widgets.push(widget);
         }
         function findWidgetsByPageId(pageId) {
+            console.log("looking for widgets by pageid " + pageId);
             var i;
             var pageWidgets = [];
             for (i = 0; i < widgets.length; i++) {
                 if (widgets[i].pageId === pageId) {
+                    console.log("current widget belongs to pageid " + widgets[i].pageId);
                     pageWidgets.push(widgets[i]);
                 }
             }
