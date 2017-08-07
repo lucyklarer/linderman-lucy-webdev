@@ -40,9 +40,12 @@
         var vm = this;
         vm.userId = "456";
         //vm.userId = $routeParams["userId"];
+        vm.websiteId = "000";
         //vm.websiteId = $routeParams["websiteId"];
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
+
+
 
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
