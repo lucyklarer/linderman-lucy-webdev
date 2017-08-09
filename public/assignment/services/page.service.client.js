@@ -20,7 +20,7 @@
         function createPage(websiteId, page) {
             //page.websiteId = websiteId;
             //page._id = (pages.length + 1).toString();
-            page.websiteId =
+            page.websiteId = "456";
             page._id = "000";
             console.log("creating new page");
             pages.push(page);
