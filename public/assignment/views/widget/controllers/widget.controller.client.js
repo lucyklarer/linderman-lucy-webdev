@@ -15,6 +15,7 @@
         init();
     }
     function NewWidgetController() { }
+
     function EditWidgetController($routeParams, WidgetService) {
         var vm = this;
         vm.widgetId = $routeParams["widgetId"];

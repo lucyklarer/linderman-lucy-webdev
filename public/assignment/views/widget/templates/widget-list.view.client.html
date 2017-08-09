@@ -23,7 +23,7 @@
 <div ng-repeat="widget in model.widgets">
     <div ng-switch="widget.widgetType">
         <div ng-switch-when="HEADING">
-            <div ng-include="" src="'views/widget/templates/widget-heading.view.client.html'"></div>
+            <div ng-include="" src="'views/widget/templates/widget-heading.view.client.html'">{{widget.text}}</div>
         </div>
         <div ng-switch-when="IMAGE">
             <div ng-include="" src="'views/widget/templates/widget-image.view.client.html'"></div>
