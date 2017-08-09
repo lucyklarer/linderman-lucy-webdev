@@ -23,7 +23,7 @@
         vm.widget = {};
         function init() {
             vm.current = WidgetService.findWidgetById(vm.widgetId);
-            switch(vm.widget.widgetType) {
+            switch(vm.current.widgetType) {
                 case "HEADING":
                     vm.model.widget.text = vm.current.text;
                     vm.model.widget.size = vm.current.size;
