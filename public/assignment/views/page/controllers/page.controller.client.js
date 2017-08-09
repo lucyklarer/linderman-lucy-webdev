@@ -31,8 +31,10 @@
     function EditPageController($routeParams, PageService) {
         var vm = this;
         vm.page = {};
-        vm.pageId = $routeParams["pageId"];
-        vm.websiteId = $routeParams["websiteId"];
+        //vm.pageId = $routeParams["pageId"];
+        //vm.websiteId = $routeParams["websiteId"];
+        vm.pageId = "000";
+        vm.websiteId = "456";
         vm.updatePage = updatePage;
         vm.deletePage = deletePage;
 
