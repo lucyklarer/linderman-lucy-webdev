@@ -25,16 +25,16 @@
             vm.current = WidgetService.findWidgetById(vm.widgetId);
             switch(vm.current.widgetType) {
                 case "HEADING":
-                    vm.model.widget.text = vm.current.text;
-                    vm.model.widget.size = vm.current.size;
+                    vm.widget.text = vm.current.text;
+                    vm.widget.size = vm.current.size;
                     break;
                 case "IMAGE":
-                    vm.model.widget.url = vm.current.url;
-                    vm.model.widget.width = vm.current.width;
+                    vm.widget.url = vm.current.url;
+                    vm.widget.width = vm.current.width;
                     break;
                 case "YOUTUBE":
-                    vm.model.widget.url = vm.current.url;
-                    vm.model.widget.width = vm.current.width;
+                    vm.widget.url = vm.current.url;
+                    vm.widget.width = vm.current.width;
                     break;
             }
         }
