@@ -20,20 +20,21 @@
         var vm = this;
         //vm.widgetId = $routeParams["widgetId"];
         vm.widgetId = "123";
+        vm.widget = {};
         function init() {
-            vm.widget = WidgetService.findWidgetById(vm.widgetId);
+            vm.current = WidgetService.findWidgetById(vm.widgetId);
             switch(vm.widget.widgetType) {
                 case "HEADING":
-                    vm.model.widget.text = vm.widget.text;
-                    vm.model.widget.size = vm.widget.size;
+                    vm.model.widget.text = vm.current.text;
+                    vm.model.widget.size = vm.current.size;
                     break;
                 case "IMAGE":
-                    vm.model.widget.url = vm.widget.url;
-                    vm.model.widget.width = vm.widget.width;
+                    vm.model.widget.url = vm.current.url;
+                    vm.model.widget.width = vm.current.width;
                     break;
                 case "YOUTUBE":
-                    vm.model.widget.url = vm.widget.url;
-                    vm.model.widget.width = vm.widget.width;
+                    vm.model.widget.url = vm.current.url;
+                    vm.model.widget.width = vm.current.width;
                     break;
             }
         }
