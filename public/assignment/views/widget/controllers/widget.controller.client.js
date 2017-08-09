@@ -17,22 +17,28 @@
     function NewWidgetController() { }
 
     function EditWidgetController($routeParams, WidgetService) {
+        console.log("entering widget editor");
         var vm = this;
         //vm.widgetId = $routeParams["widgetId"];
         vm.widgetId = "123";
         vm.widget = {};
+        console.log("widget id is " + vm.widgetId);
         function init() {
             vm.current = WidgetService.findWidgetById(vm.widgetId);
+            console.log("widget type is " + vm.current.widgetType);
             switch(vm.current.widgetType) {
                 case "HEADING":
+                    console.log("switching to heading");
                     vm.widget.text = vm.current.text;
                     vm.widget.size = vm.current.size;
                     break;
                 case "IMAGE":
+                    console.log("switching to image");
                     vm.widget.url = vm.current.url;
                     vm.widget.width = vm.current.width;
                     break;
                 case "YOUTUBE":
+                    console.log("switching to youtube");
                     vm.widget.url = vm.current.url;
                     vm.widget.width = vm.current.width;
                     break;
