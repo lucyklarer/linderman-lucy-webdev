@@ -64,10 +64,6 @@
                 controller: "EditWidgetController",
                 controllerAs: "model"
             })
-            .otherwise({
-                templateUrl: "views/user/templates/login.view.client.html",
-                controller: "LoginControl",
-                controllerAs: "model"
-            })
+
     }
 })();
