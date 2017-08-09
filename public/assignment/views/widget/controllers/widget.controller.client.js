@@ -21,11 +21,25 @@
         vm.widgetId = $routeParams["widgetId"];
         function init() {
             vm.widget = WidgetService.findWidgetById(vm.widgetId);
+            switch(vm.widget.widgetType) {
+                case "HEADING":
+                    vm.model.widget.text = vm.widget.text;
+                    vm.model.widget.size = vm.widget.size;
+                    break;
+                case "IMAGE":
+                    vm.model.widget.url = vm.widget.url;
+                    vm.model.widget.width = vm.widget.width;
+                    break;
+                case "YOUTUBE":
+                    vm.model.widget.url = vm.widget.url;
+                    vm.model.widget.width = vm.widget.width;
+                    break;
+            }
         }
         init();
-        vm.model.widget.text = vm.widget.text;
-        vm.model.widget.size = vm.widget.size;
-        vm.model.widget.url = vm.widget.url;
-        vm.model.widget.width = vm.widget.width;
+
+        function editWidget() {
+
+        }
     }
 })();
