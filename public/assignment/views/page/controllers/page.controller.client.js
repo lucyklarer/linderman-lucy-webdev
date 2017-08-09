@@ -20,11 +20,11 @@
     function NewPageController($routeParams, PageService) {
         var vm = this;
         vm.page = {};
-        vm.websiteId = $routeParams["websiteId"];
+        //vm.websiteId = $routeParams["websiteId"];
         vm.newPage = newPage;
 
         function newPage() {
-            var addPage = { _id: "", name: vm.page.name, websiteId: vm.websiteId, description: vm.page.title};
+            var addPage = { _id: "000", name: vm.page.name, websiteId: "456", description: vm.page.title};
             PageService.createPage(vm.websiteId, addPage)
         }
     }

@@ -18,8 +18,9 @@
         };
         return api;
         function createPage(websiteId, page) {
-            page.websiteId = websiteId;
+            //page.websiteId = websiteId;
             //page._id = (pages.length + 1).toString();
+            page.websiteId =
             page._id = "000";
             console.log("creating new page");
             pages.push(page);
