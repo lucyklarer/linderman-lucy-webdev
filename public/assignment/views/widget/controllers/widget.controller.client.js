@@ -18,7 +18,8 @@
 
     function EditWidgetController($routeParams, WidgetService) {
         var vm = this;
-        vm.widgetId = $routeParams["widgetId"];
+        //vm.widgetId = $routeParams["widgetId"];
+        vm.widgetId = "123";
         function init() {
             vm.widget = WidgetService.findWidgetById(vm.widgetId);
             switch(vm.widget.widgetType) {
