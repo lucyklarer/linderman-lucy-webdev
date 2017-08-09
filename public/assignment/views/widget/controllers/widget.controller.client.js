@@ -23,5 +23,9 @@
             vm.widget = WidgetService.findWidgetById(vm.widgetId);
         }
         init();
+        vm.model.widget.text = vm.widget.text;
+        vm.model.widget.size = vm.widget.size;
+        vm.model.widget.url = vm.widget.url;
+        vm.model.widget.width = vm.widget.width;
     }
 })();

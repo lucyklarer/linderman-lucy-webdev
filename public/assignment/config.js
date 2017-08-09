@@ -66,7 +66,7 @@
             })
             .otherwise({
                 templateUrl: "views/user/templates/login.view.client.html",
-                controller: "LoginController",
+                controller: "LoginControl",
                 controllerAs: "model"
             })
     }
