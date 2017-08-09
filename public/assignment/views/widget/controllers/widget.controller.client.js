@@ -30,7 +30,9 @@
                 case "HEADING":
                     console.log("switching to heading");
                     vm.widget.text = vm.current.text;
+                    console.log("text should be " + vm.widget.text);
                     vm.widget.size = vm.current.size;
+                    console.log("size should be " + vm.widget.size);
                     break;
                 case "IMAGE":
                     console.log("switching to image");
