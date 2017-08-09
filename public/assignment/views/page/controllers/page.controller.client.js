@@ -17,7 +17,7 @@
         init();
     }
 
-    function NewPageController($routeParams) {
+    function NewPageController($routeParams, PageService) {
         var vm = this;
         vm.page = {};
         vm.websiteId = $routeParams["websiteId"];
@@ -42,11 +42,11 @@
         init();
 
         function updatePage() {
-            updatePage = { _id: pageId, name: vm.page.name, websiteId: websiteId, description: vm.page.title};
-            PageService.updatePage(pageId, updatePage)
+            updatePage = { _id: vm.pageId, name: vm.page.name, websiteId: vm.websiteId, description: vm.page.title};
+            PageService.updatePage(vm.pageId, updatePage)
         }
         function deletePage() {
-            PageService.deletePage(pageId);
+            PageService.deletePage(vm.pageId);
         }
     }
 })();
