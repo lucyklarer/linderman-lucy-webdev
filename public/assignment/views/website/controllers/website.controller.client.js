@@ -44,7 +44,7 @@
         //vm.websiteId = $routeParams["websiteId"];
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
-
+        vm.website = {};
 
 
         function init() {
