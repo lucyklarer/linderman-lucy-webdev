@@ -26,9 +26,11 @@
             <div ng-include="" src="'views/widget/templates/widget-heading.view.client.html'" ng-init="display = widget"></div>
         </div>
         <div ng-switch-when="IMAGE">
+            <script>console.log("widget is image url is " + widget.url)</script>
             <div ng-include="" src="'views/widget/templates/widget-image.view.client.html'" ng-init="display = widget"></div>
         </div>
         <div ng-switch-when="YOUTUBE">
+            <script>console.log("widget is youtube url is " + widget.url)</script>
             <div ng-include="" src="'views/widget/templates/widget-youtube.view.client.html'" ng-init="display = widget"></div>
         </div>
     </div>
