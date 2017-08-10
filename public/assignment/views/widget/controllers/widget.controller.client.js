@@ -20,7 +20,7 @@
         console.log("entering widget editor");
         var vm = this;
         //vm.widgetId = $routeParams["widgetId"];
-        vm.widgetId = "123";
+        vm.widgetId = "345";
         vm.widget = {};
         console.log("widget id is " + vm.widgetId);
         function init() {
@@ -48,8 +48,11 @@
         }
         init();
 
-        function editWidget() {
-
+        function updateWidget(widget) {
+            WidgetService.updateWidget(vm.widgetId, widget);
+        }
+        function deleteWidget() {
+            WidgetService.deleteWidget(vm.widgetId);
         }
     }
 })();
