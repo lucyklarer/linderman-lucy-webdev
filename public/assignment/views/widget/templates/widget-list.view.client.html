@@ -26,10 +26,10 @@
             <div ng-include="" src="'views/widget/templates/widget-heading.view.client.html'" ng-init="display = widget"></div>
         </div>
         <div ng-switch-when="IMAGE">
-            <div ng-include="" src="'views/widget/templates/widget-image.view.client.html'" ng-init="display = widget"></div>
+            <div ng-include="" src="'views/widget/templates/widget-image.view.client.html'" ng-init="display = widget.url"></div>
         </div>
         <div ng-switch-when="YOUTUBE">
-            <div ng-include="" src="'views/widget/templates/widget-youtube.view.client.html'" ng-init="display = widget"></div>
+            <div ng-include="" src="'views/widget/templates/widget-youtube.view.client.html'" ng-init="display = widget.url"></div>
         </div>
     </div>
 </div>
