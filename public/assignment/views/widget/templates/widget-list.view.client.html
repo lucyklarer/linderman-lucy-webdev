@@ -21,7 +21,9 @@
 </nav>
 
 <div ng-repeat="widget in model.widgets">
+    <script>console.log("going through widgets")</script>
     <div ng-switch="widget.widgetType">
+        <script>console.log("widget type is " + widget.widgetType)</script>
         <div ng-switch-when="HEADING">
             <div ng-include="" src="'views/widget/templates/widget-heading.view.client.html'" ng-init="display = widget"></div>
         </div>
