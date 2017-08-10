@@ -13,6 +13,21 @@
             vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
         }
         init();
+
+        function setUrl(widget) {
+            switch(widget.widgetType) {
+                case "YOUTUBE":
+                    console.log("display youtube");
+                    var element = document.getElementById("youtubeurl");
+                    element.setAttribute("src", widget.url);
+                    break;
+                case "IMAGE":
+                    console.log("display image");
+                    var element = document.getElementById("imageurl");
+                    element.setAttribute("src", widget.url);
+                    break;
+            }
+        }
     }
     function NewWidgetController() { }
 
