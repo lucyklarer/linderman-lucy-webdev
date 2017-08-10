@@ -9,12 +9,15 @@
         var vm = this;
         //vm.pageId = $routeParams["pageId"];
         vm.pageId = "321";
+        vm.setUrl = setUrl;
+
         function init() {
             vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
         }
         init();
 
         function setUrl(widget) {
+            console.log("setting url");
             switch(widget.widgetType) {
                 case "YOUTUBE":
                     console.log("display youtube");
