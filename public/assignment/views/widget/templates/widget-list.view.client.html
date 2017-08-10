@@ -21,18 +21,14 @@
 </nav>
 
 <div ng-repeat="widget in model.widgets">
-    <script>console.log("going through widgets")</script>
     <div ng-switch="widget.widgetType">
-        <script>console.log("widget type is " + widget.widgetType)</script>
         <div ng-switch-when="HEADING">
             <div ng-include="" src="'views/widget/templates/widget-heading.view.client.html'" ng-init="display = widget"></div>
         </div>
         <div ng-switch-when="IMAGE">
-            <script>console.log("widget is image url is " + widget.url)</script>
             <div ng-include="" src="'views/widget/templates/widget-image.view.client.html'" ng-init="display = widget"></div>
         </div>
         <div ng-switch-when="YOUTUBE">
-            <script>console.log("widget is youtube url is " + widget.url)</script>
             <div ng-include="" src="'views/widget/templates/widget-youtube.view.client.html'" ng-init="display = widget"></div>
         </div>
     </div>
