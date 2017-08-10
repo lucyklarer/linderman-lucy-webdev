@@ -36,6 +36,7 @@
                     pageWidgets.push(widgets[i]);
                 }
             }
+            console.log("found " + pageWidgets.length + " widgets");
             return pageWidgets;
         }
         function findWidgetById(widgetId) {
