@@ -38,7 +38,7 @@
         console.log("entering widget editor");
         var vm = this;
         //vm.widgetId = $routeParams["widgetId"];
-        vm.widgetId = "123";
+        vm.widgetId = "345";
         vm.widget = {};
         console.log("widget id is " + vm.widgetId);
         function init() {
