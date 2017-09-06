@@ -49,6 +49,7 @@
 
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+            console.log("user has " + vm.websites.length + " websites");
             vm.current = WebsiteService.findWebsiteById(vm.websiteId);
             console.log("current website is " + vm.current.name);
             vm.website.name = vm.current.name;
