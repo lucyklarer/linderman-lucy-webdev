@@ -10,17 +10,8 @@
     console.log("made it this far");
 
     function LoginController($location, UserService) {
+        console.log("entering login controller");
 
-
-        function init() {
-            var vm = this;
-            vm.users = UserService.users;
-            console.log("init users");
-            vm.login = login;
-        }
-        init();
-
-        console.log("left init");
         function login() {
             console.log("logging in as " + vm.user.username);
             var findUser = UserService.findUserByCredentials(vm.user.username, vm.user.password);
