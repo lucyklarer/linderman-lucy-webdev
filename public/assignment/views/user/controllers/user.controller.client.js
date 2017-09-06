@@ -3,17 +3,19 @@
 
     angular
         .module("WebAppMaker")
-        .controller("LoginControl", LoginControl)
+        .controller("LoginController", LoginController)
         .controller("RegisterController", RegisterController)
         .controller("ProfileController", ProfileController);
 
     console.log("made it this far");
 
     function LoginController($location, UserService) {
+        console.log("trying to log in");
         var vm = this;
         vm.login = login;
 
         function login(user) {
+            console.log("logging in as " + model.user.username);
             var findUser = UserService.findUserByCredentials(model.user.username, model.user.password);
             if(findUser!==null) {
                 console.log("logged in " + findUser.username);
