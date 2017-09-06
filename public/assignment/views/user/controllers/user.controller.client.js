@@ -14,7 +14,7 @@
         var vm = this;
         vm.login = login;
 
-        function login(user) {
+        function login() {
             console.log("logging in as " + model.user.username);
             var findUser = UserService.findUserByCredentials(model.user.username, model.user.password);
             if(findUser!==null) {
