@@ -10,16 +10,13 @@
     console.log("made it this far");
 
     function LoginController($location, UserService) {
-        console.log("reached login page");
-        var vm = this;
-        console.log("set view model");
-        console.log("username might be " + vm.username);
-        vm.login = login;
-        console.log("set login function");
+
 
         function init() {
+            var vm = this;
             vm.users = UserService.users;
             console.log("init users");
+            vm.login = login;
         }
         init();
 
