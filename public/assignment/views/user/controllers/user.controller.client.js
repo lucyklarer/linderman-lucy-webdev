@@ -23,6 +23,7 @@
                 $location.url("/user/" + findUser._id);
             } else {
                 vm.alert = "Unable to login " + vm.user.username;
+                console.log("couldn't log in as " + vm.user.username);
             }
         }
     }
