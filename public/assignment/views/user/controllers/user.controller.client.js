@@ -20,6 +20,7 @@
         }
         init();
 
+        console.log("left init");
         function login() {
             console.log("logging in as " + vm.user.username);
             var findUser = UserService.findUserByCredentials(vm.user.username, vm.user.password);
