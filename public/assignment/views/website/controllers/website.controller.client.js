@@ -59,6 +59,8 @@
 
         function updateWebsite() {
             console.log("updating website " + vm.website.name);
+            console.log("developer ID is " + vm.website.developerId);
+            console.log("userID is " + vm.userId);
             updateWebsite = {_id: vm.websiteId, name: vm.website.name, developerId: vm.website.developerId, description: vm.website.description};
             WebsiteService.updateWebsite(vm.websiteId, updateWebsite);
         }

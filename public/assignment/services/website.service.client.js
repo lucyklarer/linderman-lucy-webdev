@@ -59,7 +59,6 @@
                     websites[i] = website;
                     console.log("updated website " + websites[i].name);
                     console.log(websites.length + " websites");
-                    return;
                 }
             }
             console.log("couldn't update website");
