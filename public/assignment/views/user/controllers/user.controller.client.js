@@ -9,7 +9,7 @@
 
     console.log("made it this far");
 
-    function LoginControl($location, UserService) {
+    function LoginController($location, UserService) {
         var vm = this;
         vm.login = login;
 
