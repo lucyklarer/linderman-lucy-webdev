@@ -10,18 +10,25 @@
     console.log("made it this far");
 
     function LoginController($location, UserService) {
-        console.log("trying to log in");
+        console.log("reached login page");
         var vm = this;
+        console.log("set view model");
         vm.login = login;
+        console.log("set login function");
+
+        function init() {
+            vm.users = UserService.users;
+        }
+        init();
 
         function login() {
-            console.log("logging in as " + model.user.username);
-            var findUser = UserService.findUserByCredentials(model.user.username, model.user.password);
+            console.log("logging in as " + vm.user.username);
+            var findUser = UserService.findUserByCredentials(vm.user.username, vm.user.password);
             if(findUser!==null) {
                 console.log("logged in " + findUser.username);
                 $location.url("/user/" + findUser._id);
             } else {
-                vm.alert = "Unable to login " + model.user.username;
+                vm.alert = "Unable to login " + vm.user.username;
             }
         }
     }
