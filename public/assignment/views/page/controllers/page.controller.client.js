@@ -39,7 +39,10 @@
         vm.deletePage = deletePage;
 
         function init() {
-            vm.page = PageService.findPageById(vm.pageId);
+            vm.current = PageService.findPageById(vm.pageId);
+            console.log("current page is " + vm.current.name);
+            vm.page.name = vm.current.name;
+            vm.page.title = vm.current.title;
         }
         init();
 
