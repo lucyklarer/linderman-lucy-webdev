@@ -56,8 +56,10 @@
         }
         init();
 
-        function updateWebsite(website) {
-            WebsiteService.updateWebsite(vm.websiteId, website);
+        function updateWebsite() {
+            console.log("updating website " + vm.website.name);
+            updateWebsite = {_id: vm.websiteId, name: vm.website.name, developerId: vm.website.developerId, description: vm.website.description};
+            WebsiteService.updateWebsite(vm.websiteId, updateWebsite);
         }
         function deleteWebsite() {
             WebsiteService.deleteWebsite(vm.websiteId);
