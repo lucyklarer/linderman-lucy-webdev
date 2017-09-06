@@ -52,11 +52,13 @@
             return null;
         }
         function updateWebsite(websiteId, website) {
+            console.log(websites.length + " websites");
             var i;
             for (i = 0; i < websites.length; i++) {
                 if (websites[i]._id === websiteId) {
                     websites[i] = website;
                     console.log("updated website " + websites[i].name);
+                    console.log(websites.length + " websites");
                     return;
                 }
             }
