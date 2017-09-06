@@ -13,11 +13,13 @@
         console.log("reached login page");
         var vm = this;
         console.log("set view model");
+        console.log("username might be " + vm.username);
         vm.login = login;
         console.log("set login function");
 
         function init() {
             vm.users = UserService.users;
+            console.log("init users");
         }
         init();
 
