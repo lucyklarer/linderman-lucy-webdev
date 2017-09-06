@@ -40,6 +40,7 @@
     function ProfileController($routeParams, UserService) {
         var vm = this;
         vm.userId = $routeParams["userId"];
+        console.log("userId is " + vm.userId);
         vm.password = $routeParams["password"];
         vm.username = $routeParams["username"];
         vm.firstName = $routeParams["firstName"];
