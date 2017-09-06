@@ -40,6 +40,7 @@
 
         function init() {
             vm.current = PageService.findPageById(vm.pageId);
+            console.log("curent pageId is " + vm.pageId);
             console.log("current page is " + vm.current.name);
             vm.page.name = vm.current.name;
             vm.page.title = vm.current.title;

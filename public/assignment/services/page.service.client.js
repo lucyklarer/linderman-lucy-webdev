@@ -39,9 +39,11 @@
             var i;
             for (i = 0; i < pages.length; i++) {
                 if (pages[i]._id === pageId) {
+                    console.log("found page " + pages[i].name);
                     return pages[i];
                 }
             }
+            console.log("couldn't find page");
             return null;
         }
         function updatePage(pageId, page) {
