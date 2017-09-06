@@ -47,7 +47,11 @@
         vm.updateProfile = updateProfile;
 
         function init() {
-            vm.user = UserService.findUserById(vm.userId);
+            vm.current = UserService.findUserById(vm.userId);
+            vm.user.username = vm.current.username;
+            vm.user.email = vm.current.email;
+            vm.user.firstName = vm.current.firstName;
+            vm.user.lastName = vm.current.lastName;
         }
         init();
 
