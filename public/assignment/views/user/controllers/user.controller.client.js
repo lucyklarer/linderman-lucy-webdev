@@ -32,7 +32,7 @@
 
     console.log("and here we are");
 
-    function RegisterController(UserService) {
+    function RegisterController(UserService, $location) {
         var vm = this;
         vm.register = register;
 
