@@ -39,7 +39,7 @@
         function register(username, password) {
             var addUser = {_id: "", username: username, password: password, firstName: "", lastName: ""};
             UserService.createUser(addUser);
-            console.log("created user " + user.username);
+            console.log("created user " + username);
             console.log("new user id is " + UserService.findUserByUsername(user.username)._id);
             $location.url("/user/" + UserService.findUserByUsername(user.username)._id);
             console.log($location.path());
