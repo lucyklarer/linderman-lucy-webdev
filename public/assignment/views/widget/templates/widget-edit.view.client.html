@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <span class="navbar-text pull-left">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
             <span class="glyphicon glyphicon-chevron-left">
             </span>
                 </a>
@@ -13,7 +13,7 @@
             </a>
 
             <span class="navbar-text pull-right navbar-glyphs">
-            <a href="#/user/:uid/website/:wid/page/:pid/widget" class="navbar-link">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
           <span class="glyphicon glyphicon-ok">
           </span>
             </a>
@@ -36,7 +36,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
         <span class="navbar-text pull-right">
-            <a href="#/profile">
+            <a href="#/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </span>

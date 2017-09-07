@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <p class="navbar-text pull-left">
-                <a href="#/widget-list" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
             <span class="glyphicon glyphicon-chevron-left">
             </span>
                 </a>
@@ -22,7 +22,7 @@
 
         <div class="col-sm-12">
             <div class="text-left">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                     Header
                 </a>
 
@@ -88,7 +88,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                     Image
                 </a>
 
@@ -99,7 +99,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget/:wgid">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                     YouTube
                 </a>
 
@@ -135,7 +135,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <span class="navbar-text pull-right">
-            <a href="#/profile">
+            <a href="#/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </span>

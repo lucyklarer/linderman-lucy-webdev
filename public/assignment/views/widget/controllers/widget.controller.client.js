@@ -7,8 +7,9 @@
 
     function WidgetListController($routeParams, WidgetService) {
         var vm = this;
-        //vm.pageId = $routeParams["pageId"];
-        vm.pageId = "321";
+        vm.pageId = $routeParams["pid"];
+        vm.websiteId = $routeParams["wid"];
+        vm.userId = $routeParams["uid"];
         vm.setUrl = setUrl;
 
         function init() {
@@ -32,13 +33,22 @@
             }
         }
     }
-    function NewWidgetController() { }
+    function NewWidgetController() {
+        console.log("entering new widget controller");
+        var vm = this;
+        vm.pageId = $routeParams["pid"];
+        vm.websiteId = $routeParams["wid"];
+        vm.userId = $routeParams["uid"];
+        vm.widgetId = $routeParams["wgid"];
+    }
 
     function EditWidgetController($routeParams, WidgetService) {
         console.log("entering widget editor");
         var vm = this;
-        //vm.widgetId = $routeParams["widgetId"];
-        vm.widgetId = "345";
+        vm.pageId = $routeParams["pid"];
+        vm.websiteId = $routeParams["wid"];
+        vm.userId = $routeParams["uid"];
+        vm.widgetId = $routeParams["wgid"];
         vm.widget = {};
         console.log("widget id is " + vm.widgetId);
         function init() {

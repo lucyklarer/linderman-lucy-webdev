@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <p class="navbar-text pull-left">
-            <a href="#/user/:uid/website/:wid/page" class="navbar-link">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
             <span class="glyphicon glyphicon-chevron-left">
             </span>
             </a>
@@ -13,7 +13,7 @@
             New Page
         </a>
         <p class="navbar-text pull-right navbar-glyphs">
-            <a ng-click="model.newPage()" href="#/user/:uid/website/:wid/page" class="navbar-link">
+            <a ng-click="model.newPage()" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
           <span class="glyphicon glyphicon-ok">
           </span>
             </a>
@@ -38,7 +38,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <span class="navbar-text pull-right">
-            <a href="#/user/:uid">
+            <a href="#/user/{{model.userId}}">
                 <span class="glyphicon glyphicon-user"></span>
             </a>
         </span>

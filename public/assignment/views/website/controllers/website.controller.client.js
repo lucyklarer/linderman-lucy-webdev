@@ -10,7 +10,7 @@
     function WebsiteListController($routeParams, WebsiteService) {
         console.log("entering websitelistcontroller");
         var vm = this;
-        vm.userId = "456";
+        vm.userId = $routeParams["uid"];
         console.log("userId is " + vm.userId);
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
@@ -20,9 +20,7 @@
     function NewWebsiteController(WebsiteService) {
         var vm = this;
         vm.website = {};
-        //vm.userId = $routeParams["userId"];
-
-        vm.userId = "456";
+        vm.userId = $routeParams["uid"];
 
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
@@ -32,7 +30,7 @@
         vm.newWebsite = newWebsite;
 
         function newWebsite() {
-            var addWebsite = { _id: "456", name: vm.website.name, developerId: vm.userId, description: vm.website.description};
+            var addWebsite = { _id: "", name: vm.website.name, developerId: vm.userId, description: vm.website.description};
             WebsiteService.createWebsite(vm.userId, addWebsite);
         }
     }

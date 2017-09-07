@@ -24,6 +24,7 @@
         return api;
         function createWidget(pageId, widget) {
             widget.pageId = pageId;
+            widget._id = (widgets.length + 1).toString();
             widgets.push(widget);
         }
         function findWidgetsByPageId(pageId) {
