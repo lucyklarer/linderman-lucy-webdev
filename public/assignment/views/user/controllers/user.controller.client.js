@@ -21,6 +21,8 @@
             if(findUser!==null) {
                 console.log("logged in " + findUser.username);
                 $location.url("/user/" + findUser._id);
+                console.log($location.url());
+                console.log($location.path());
             } else {
                 vm.alert = "Unable to login " + vm.user.username;
                 console.log("couldn't log in as " + vm.user.username);
@@ -36,12 +38,15 @@
 
         function register(user) {
             UserService.createUser(user);
+            console.log("created user " + user.username);
         }
     }
 
     console.log("now we're here");
 
-    function ProfileController($routeParams, UserService) {
+    function ProfileController($routeParams, UserService, $location) {
+        console.log($location.url());
+        console.log($location.path());
         var vm = this;
         vm.userId = $routeParams["userId"];
         console.log("userId is " + vm.userId);
