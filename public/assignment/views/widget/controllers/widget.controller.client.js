@@ -33,13 +33,14 @@
             }
         }
     }
-    function NewWidgetController() {
+    function NewWidgetController($routeParams, WidgetService) {
         console.log("entering new widget controller");
         var vm = this;
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
         vm.userId = $routeParams["uid"];
         vm.widgetId = $routeParams["wgid"];
+
     }
 
     function EditWidgetController($routeParams, WidgetService) {
