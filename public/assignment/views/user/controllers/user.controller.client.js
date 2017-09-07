@@ -39,7 +39,8 @@
         function register(user) {
             UserService.createUser(user);
             console.log("created user " + user.username);
-            $location.url("/user/" + user._id);
+            console.log("new user id is " + UserService.findUserByUsername(user.username)._id);
+            $location.url("/user/" + UserService.findUserByUsername(user.username)._id);
             console.log($location.path());
         }
     }
