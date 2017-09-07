@@ -50,6 +50,7 @@
         var path = $location.path();
 
         var vm = this;
+        vm.user = {};
         vm.userId = $routeParams["uid"];
         console.log("userId is " + vm.userId);
         /*vm.password = $routeParams["password"];
