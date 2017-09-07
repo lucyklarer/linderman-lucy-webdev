@@ -22,7 +22,7 @@
 
         <div class="col-sm-12">
             <div class="text-left">
-                <a ng-init="type = header"
+                <a onload="model.handleType(1)"
                         href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                     Header
                 </a>
@@ -89,7 +89,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a ng-init="type = image" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
+                <a onload="model.handleType(2)" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                     Image
                 </a>
 
@@ -100,7 +100,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a ng-init="type = youtube" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
+                <a onload="model.handleType(3)" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
                     YouTube
                 </a>
 

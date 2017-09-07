@@ -41,23 +41,30 @@
         vm.userId = $routeParams["uid"];
 
         vm.init = init;
+        vm.handleType = handleType;
+
+        var newWidget = {};
 
         function init() {
-            var newWidget = {};
-            switch(vm.type) {
-                case heading:
+            vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
+            console.log("new widget id is " + vm.widgetId);
+        }
+        init();
+
+        function handleType(type) {
+            console.log("handling type " + type.toString());
+            switch(type) {
+                case 1:
                     newWidget.type = "HEADING";
                     break;
-                case image:
+                case 2:
                     newWidget.type = "IMAGE";
                     break;
-                case youtube:
+                case 3:
                     newWidget.type = "YOUTUBE";
                     break;
             }
-            vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
         }
-        init();
 
     }
 
