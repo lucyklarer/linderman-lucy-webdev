@@ -47,13 +47,15 @@
     function ProfileController($routeParams, UserService, $location) {
         console.log($location.url());
         console.log($location.path());
+        var path = $location.path();
+
         var vm = this;
-        vm.userId = $routeParams["userId"];
+        vm.userId = $routeParams["uid"];
         console.log("userId is " + vm.userId);
-        vm.password = $routeParams["password"];
+        /*vm.password = $routeParams["password"];
         vm.username = $routeParams["username"];
         vm.firstName = $routeParams["firstName"];
-        vm.lastName = $routeParams["lastName"];
+        vm.lastName = $routeParams["lastName"];*/
         vm.updateProfile = updateProfile;
 
         function init() {
