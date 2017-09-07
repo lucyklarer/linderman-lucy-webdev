@@ -78,19 +78,20 @@
         init();
 
         function updateWidget() {
-
+            var update = {};
             switch(vm.current.widgetType) {
                 case "HEADING":
-                    var update = {"_id": vm.current._id, "widgetType": "HEADING", "pageId": vm.pageId, "size": vm.widget.size, "text": vm.widget.text};
+                    update = {"_id": vm.current._id, "widgetType": "HEADING", "pageId": vm.pageId, "size": vm.widget.size, "text": vm.widget.text};
                     break;
                 case "IMAGE":
-                    var update = { "_id": vm.current._id, "widgetType": "IMAGE", "pageId": vm.pageId, "width": vm.widget.width, "url": vm.widget.url};
+                    update = { "_id": vm.current._id, "widgetType": "IMAGE", "pageId": vm.pageId, "width": vm.widget.width, "url": vm.widget.url};
                     break;
                 case "YOUTUBE":
-                    var update = { "_id": vm.current._id, "widgetType": "YOUTUBE", "pageId": vm.pageId, "width": vm.widget.width,
+                    update = { "_id": vm.current._id, "widgetType": "YOUTUBE", "pageId": vm.pageId, "width": vm.widget.width,
                         "url": vm.widget.url};
                     break;
             }
+            console.log("updating widget");
             WidgetService.updateWidget(vm.widgetId, update);
         }
         function deleteWidget() {

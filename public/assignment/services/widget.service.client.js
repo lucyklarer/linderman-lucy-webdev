@@ -54,6 +54,7 @@
             for (i = 0; i < widgets.length; i++) {
                 if (widgets[i]._id === widgetId) {
                     widgets[i] = widget;
+                    console.log("updated widget " + widget._id);
                 }
             }
         }
