@@ -44,6 +44,7 @@
         vm.handleType = handleType;
 
         var newWidget = {};
+        newWidget = {"widgetType": ""};
 
         function init() {
             vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
@@ -54,13 +55,13 @@
             console.log("handling type " + type.toString());
             switch(type) {
                 case 1:
-                    newWidget.type = "HEADING";
+                    newWidget.widgetType = "HEADING";
                     break;
                 case 2:
-                    newWidget.type = "IMAGE";
+                    newWidget.widgetType = "IMAGE";
                     break;
                 case 3:
-                    newWidget.type = "YOUTUBE";
+                    newWidget.widgetType = "YOUTUBE";
                     break;
             }
         }
