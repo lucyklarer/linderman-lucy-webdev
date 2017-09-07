@@ -57,10 +57,6 @@
         vm.user = {};
         vm.userId = $routeParams["uid"];
         console.log("userId is " + vm.userId);
-        /*vm.password = $routeParams["password"];
-        vm.username = $routeParams["username"];
-        vm.firstName = $routeParams["firstName"];
-        vm.lastName = $routeParams["lastName"];*/
         vm.updateProfile = updateProfile;
 
         function init() {
@@ -69,13 +65,14 @@
             vm.user.email = vm.current.email;
             vm.user.firstName = vm.current.firstName;
             vm.user.lastName = vm.current.lastName;
+            vm.user.password = vm.current.password;
         }
         init();
 
         function updateProfile() {
-            updateUser = {_id: vm.userId, username: vm.username, password: vm.password, firstName: vm.firstName, lastName: vm.lastName};
+            updateUser = {_id: vm.userId, username: vm.user.username, password: vm.user.password, firstName: vm.user.firstName, lastName: vm.user.lastName};
             UserService.updateUser(vm.userId, updateUser);
-            console.log("updated user " + vm.username);
+            console.log("updated user " + vm.user.username);
         }
     }
     console.log("started at the top now we here");
