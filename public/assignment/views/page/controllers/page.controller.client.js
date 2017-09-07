@@ -9,6 +9,7 @@
         console.log("entering page list controller");
         var vm = this;
         vm.websiteId = $routeParams["wid"];
+        vm.userId = $routeParams["uid"];
         console.log("website id is " + vm.websiteId);
         function init() {
             vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
@@ -20,6 +21,7 @@
         var vm = this;
         vm.page = {};
         vm.websiteId = $routeParams["wid"];
+        vm.userId = $routeParams["uid"];
         vm.newPage = newPage;
 
         function newPage() {
@@ -32,6 +34,7 @@
         vm.page = {};
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
+        vm.userId = $routeParams["uid"];
         vm.updatePage = updatePage;
         vm.deletePage = deletePage;
 
