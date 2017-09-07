@@ -38,10 +38,8 @@
     }
     function EditWebsiteController($routeParams, WebsiteService) {
         var vm = this;
-        vm.userId = "456";
-        //vm.userId = $routeParams["userId"];
-        vm.websiteId = "456";
-        //vm.websiteId = $routeParams["websiteId"];
+        vm.userId = $routeParams["uid"];
+        vm.websiteId = $routeParams["wid"];
         vm.updateWebsite = updateWebsite;
         vm.deleteWebsite = deleteWebsite;
         vm.website = {};

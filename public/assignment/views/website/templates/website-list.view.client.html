@@ -4,7 +4,7 @@
 <nav class="navbar navbar-style navbar-fixed-top">
     <div class="container-fluid">
             <span class="navbar-text navbar-style pull-left">
-                <a href="#/user/:uid" class="navbar-link">
+                <a href="#/user/{{userId}}" class="navbar-link">
             <span class="glyphicon glyphicon-chevron-left navbar-style">
             </span>
                 </a>
@@ -13,7 +13,7 @@
             Websites
         </a>
         <span class="navbar-text navbar-style pull-right">
-                <a href="#/user/:uid/website/new" class="navbar-link">
+                <a href="#/user/{{userId}}/website/new" class="navbar-link">
           <span class="glyphicon glyphicon-plus navbar-style">
           </span>
                 </a>
@@ -26,11 +26,11 @@
         <div class="row row-spacing">
             <div class="col-xs-12">
                 <div class="text-left">
-                    <a href="#/user/:uid/website/:wid/page">
+                    <a href="#/user/{{userId}}/website/{{websiteId}}/page">
                         {{website.name}}
                     </a>
                     <div class="pull-right">
-                        <a href="#/user/:uid/website/:wid">
+                        <a href="#/user/{{userId}}/website/{{websiteId}}">
                     <span class="glyphicon glyphicon-cog">
                     </span>
                         </a>
@@ -45,7 +45,7 @@
 <nav class="navbar navbar-style navbar-fixed-bottom">
     <div class="container-fluid">
         <span class="navbar-text pull-right navbar-style">
-            <a href="#/user/:uid">
+            <a href="#/user/{{userId}}">
                 <span class="glyphicon glyphicon-user navbar-style"></span>
             </a>
         </span>

@@ -75,6 +75,7 @@
         function updateProfile() {
             updateUser = {_id: userId, username: vm.username, password: vm.password, firstName: vm.firstName, lastName: vm.lastName};
             UserService.updateUser(userId, updateUser);
+            console.log("updated user " + vm.username);
         }
     }
     console.log("started at the top now we here");
