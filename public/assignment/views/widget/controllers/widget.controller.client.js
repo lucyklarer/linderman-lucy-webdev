@@ -39,7 +39,14 @@
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
         vm.userId = $routeParams["uid"];
-        vm.widgetId = $routeParams["wgid"];
+
+        vm.init = init;
+
+        function init() {
+            var newWidget = {};
+            vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
+        }
+        init();
 
     }
 

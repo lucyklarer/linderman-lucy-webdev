@@ -26,6 +26,7 @@
             widget.pageId = pageId;
             widget._id = (widgets.length + 1).toString();
             widgets.push(widget);
+            return widget._id;
         }
         function findWidgetsByPageId(pageId) {
             console.log("looking for widgets by pageid " + pageId);
