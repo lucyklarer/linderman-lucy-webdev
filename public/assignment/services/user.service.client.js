@@ -24,8 +24,6 @@
             var exist = findUserByUsername(user.username);
             if(exist===null) {
                 user._id = (users.length + 1).toString();
-                user.firstName = "";
-                user.lastName = "";
                 users.push(user);
                 log.console("created user " + user.username)
             }
