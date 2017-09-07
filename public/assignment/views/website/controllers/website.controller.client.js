@@ -17,7 +17,7 @@
         }
         init();
     }
-    function NewWebsiteController(WebsiteService, $RouteParams) {
+    function NewWebsiteController(WebsiteService, $routeParams) {
         var vm = this;
         vm.website = {};
         vm.userId = $routeParams["uid"];
