@@ -24,6 +24,7 @@
         function createWebsite(userId, website) {
             //website.developerId = userId;
             website._id = (websites.length + 1).toString();
+            console.log("website id is " + website._id);
             websites.push(website);
             console.log("adding website " + website.name);
         }
@@ -33,6 +34,7 @@
             for (i = 0; i < websites.length; i++) {
                 if (websites[i].developerId === userId) {
                     console.log("found website " + websites[i].name);
+                    console.log("website id is " + websites[i]._id);
                     userWebsites.push(websites[i]);
                 }
             }
