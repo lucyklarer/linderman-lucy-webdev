@@ -47,6 +47,8 @@
         console.log("entering widget editor");
         var vm = this;
         vm.updateWidget = updateWidget;
+        vm.deleteWidget = deleteWidget;
+
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
         vm.userId = $routeParams["uid"];
@@ -97,6 +99,7 @@
             WidgetService.updateWidget(vm.widgetId, update);
         }
         function deleteWidget() {
+            console.log("deleting widget " + vm.widgetId);
             WidgetService.deleteWidget(vm.widgetId);
         }
     }
