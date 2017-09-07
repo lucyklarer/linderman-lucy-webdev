@@ -25,7 +25,7 @@
             if(exist===null) {
                 user._id = (users.length + 1).toString();
                 users.push(user);
-                log.console("created user " + user.username)
+                console.log("created user " + user.username);
             }
         }
         function findUserById(id) {
