@@ -44,6 +44,17 @@
 
         function init() {
             var newWidget = {};
+            switch(vm.type) {
+                case heading:
+                    newWidget.type = "HEADING";
+                    break;
+                case image:
+                    newWidget.type = "IMAGE";
+                    break;
+                case youtube:
+                    newWidget.type = "YOUTUBE";
+                    break;
+            }
             vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
         }
         init();
