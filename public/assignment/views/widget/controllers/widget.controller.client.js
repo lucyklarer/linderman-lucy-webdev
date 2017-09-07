@@ -46,6 +46,7 @@
     function EditWidgetController($routeParams, WidgetService) {
         console.log("entering widget editor");
         var vm = this;
+        vm.updateWidget = updateWidget;
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
         vm.userId = $routeParams["uid"];
@@ -78,6 +79,7 @@
         init();
 
         function updateWidget() {
+            console.log("entering update widget");
             var update = {};
             switch(vm.current.widgetType) {
                 case "HEADING":
