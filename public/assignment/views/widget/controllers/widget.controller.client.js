@@ -47,7 +47,6 @@
 
         function init() {
             vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
-            console.log("new widget id is " + vm.widgetId);
         }
         init();
 
