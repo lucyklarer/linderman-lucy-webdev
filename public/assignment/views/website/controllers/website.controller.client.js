@@ -5,13 +5,11 @@
         .controller("NewWebsiteController", NewWebsiteController)
         .controller("EditWebsiteController", EditWebsiteController);
 
-    console.log("website controller");
-
     function WebsiteListController($routeParams, WebsiteService) {
-        console.log("entering websitelistcontroller");
         var vm = this;
         vm.userId = $routeParams["uid"];
         console.log("userId is " + vm.userId);
+
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
         }
@@ -22,12 +20,12 @@
         vm.website = {};
         vm.userId = $routeParams["uid"];
 
+        vm.newWebsite = newWebsite;
+
         function init() {
             vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
         }
         init();
-
-        vm.newWebsite = newWebsite;
 
         function newWebsite() {
             var addWebsite = { _id: "", name: vm.website.name, developerId: vm.userId, description: vm.website.description};
