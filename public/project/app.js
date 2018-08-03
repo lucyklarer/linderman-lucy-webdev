@@ -1,1 +1,1 @@
-angular.module("AquaRegia", [])
+angular.module("AquaRegia", [require('angular-route')])

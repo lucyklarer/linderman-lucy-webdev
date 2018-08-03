@@ -1,6 +1,6 @@
 (function() {
     angular
-        .module("AquaRegia", ["ngRoute"])
+        .module("AquaRegia", ['ngRoute'])
         .config(Config);
     function Config($RouteProvider) {
         $RouteProvider
