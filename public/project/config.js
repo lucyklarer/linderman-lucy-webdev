@@ -122,7 +122,9 @@
 
             })
             .otherwise({
-
+                templateUrl: "views/home/templates/home.view.client.html",
+                controller: "HomeController",
+                controllerAs: "model"
             })
     }
 })();
