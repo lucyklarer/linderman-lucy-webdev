@@ -2,8 +2,8 @@
     angular
         .module("AquaRegia", ['ngRoute'])
         .config(Config);
-    function Config($RouteProvider) {
-        $RouteProvider
+    function Config($routeProvider) {
+        $routeProvider
             .when("/register", {
                 templateUrl: "views/user/templates/register.view.client.html",
                 controller: "RegisterController",
