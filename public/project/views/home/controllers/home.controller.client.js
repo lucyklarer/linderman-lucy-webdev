@@ -4,8 +4,8 @@
         .module("AquaRegia")
         .controller("HomeController", HomeController);
 
-    function HomeController() {
-
+    function HomeController($location) {
+        console.log("hello " + $location.url())
     }
 
 })();
