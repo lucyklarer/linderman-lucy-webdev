@@ -34,7 +34,7 @@
         }
     }
     function NewWidgetController($routeParams, WidgetService) {
-        console.log("entering new widget controller");
+        console.log("entering new widget controllers");
         var vm = this;
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
