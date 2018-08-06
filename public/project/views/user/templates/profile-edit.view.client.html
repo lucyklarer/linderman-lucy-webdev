@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<nav class="navbar navbar-style navbar-dark navbar-expand-md navbar-fixed-top">
+    <a class="navbar-brand navbar-style" href="#">
+        aqua regia
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-</body>
-</html>
+    <div class="d-flex justify-content-between collapse navbar-collapse navbar-style" id="navbarSupportedContent">
+        <ul class="flex-grow-0 nav navbar-nav navbar-style navbar-dark">
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#">Browse</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-style navbar-dark navbar-right">
+            <li class="nav-item navbar-dark navbar-style">
+                <form class="form-inline">
+                    <label class="sr-only" for="searchInput">search input</label>
+                    <input class="form-control m-1" id="searchInput" type="search" placeholder="" aria-label="Search">
+                    <button class="btn btn-outline-light m-1" type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-3">
+
+    <form>
+        <div class="form-group">
+            <label for="username">username</label>
+            <input ng-model="model.user.username" type="text" class="form-control" id="username" placeholder="username">
+        </div>
+
+        <div class="form-group">
+            <label for="display-name">display name</label>
+            <input ng-model="model.user.displayName" type="text" class="form-control" id="display-name" placeholder="alice">
+        </div>
+        <div class="form-group">
+            <label for="email">email address</label>
+            <input ng-model="model.user.email" type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
+        </div>
+        <div class="form-group">
+            <label for="password">password</label>
+            <input ng-model="model.user.lastName" type="text" class="form-control" id="password" placeholder="password">
+        </div>
+        <div class="form-group">
+            <label for="profilePicture">profile picture</label>
+            <input type="file" class="form-control-file" id="profilePicture">
+        </div>
+    </form>
+
+    <a href="#" class="btn btn-primary">Save changes</a>
+
+</div>

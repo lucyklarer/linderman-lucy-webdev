@@ -3,7 +3,8 @@ input.form-control {
 }
 
 body {
-    padding-top: 70px;
+    padding-top: 0;
+    margin: 0;
 }
 
 .row-spacing {
@@ -13,6 +14,10 @@ body {
 .navbar-style {
     background-color:#428bca;
     color:white;
+}
+
+.btn-primary {
+    background-color:#428bca;
 }
 
 .widget-glyph-style {

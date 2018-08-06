@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 
-
 <nav class="navbar navbar-style navbar-dark navbar-expand-md navbar-fixed-top">
-    <div class="container-fluid">
         <a class="navbar-brand navbar-style" href="#">
-            Aqua Regia
+            aqua regia
         </a>
-        <button class="navbar-toggler navbar-style navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse navbar-style navbar-dark" id="navbarNavDropdown">
-            <ul class="navbar-nav navbar-style">
-                <li class="nav-item dropdown">
-                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="browseDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Browse
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="browseDropdown">
-                        <a class="dropdown-item" href="#">works</a>
-                        <a class="dropdown-item" href="#">creators</a>
-                        <a class="dropdown-item" href="#">by medium</a>
-                    </div>
+        <div class="d-flex justify-content-between collapse navbar-collapse navbar-style" id="navbarSupportedContent">
+            <ul class="flex-grow-0 nav navbar-nav navbar-style navbar-dark">
+                <li class="nav-item navbar-dark navbar-style">
+                    <a class="nav-link" href="#">Browse</a>
                 </li>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+            </ul>
+            <ul class="nav navbar-nav navbar-style navbar-dark navbar-right">
+                <li class="nav-item navbar-dark navbar-style">
+                        <form class="form-inline">
+                            <label class="sr-only" for="searchInput">search input</label>
+                            <input class="form-control m-1" id="searchInput" type="search" placeholder="" aria-label="Search">
+                            <button class="btn btn-outline-light m-1" type="submit">Search</button>
+                            <label class="sr-only" for="usernameInput">username</label>
+                            <input class="form-control m-1" id="usernameInput" type="text" placeholder="username" aria-label="username">
+                            <label class="sr-only" for="passwordInput">password</label>
+                            <input class="form-control m-1" id="passwordInput" type="password" placeholder="password" aria-label="password">
+                    </form>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                <li class="nav-item navbar-dark navbar-style">
+                    <a class="nav-link" href="#/profile">Login</a>
                 </li>
-
+                <li class="nav-item navbar-dark navbar-style">
+                    <a class="nav-link" href="#/register">Register</a>
+                </li>
             </ul>
         </div>
-
-    </div>
 </nav>
 
+<div class="d-flex justify-content-center container-fluid">
 
 
+</div>
 
-<nav class="navbar navbar-style navbar-fixed-bottom">
-    <div class="container-fluid">
-        <span class="navbar-text pull-right navbar-style">
-            <a href="#">
-                <span class="glyphicon glyphicon-user navbar-style"></span>
-            </a>
-        </span>
-    </div>
-</nav>
+
+<!--
+<nav class="navbar navbar-style navbar-dark navbar-expand-sm navbar-fixed-bottom">
+    <a class="navbar-brand navbar-style" href="#">aqua regia</a>
+</nav>-->

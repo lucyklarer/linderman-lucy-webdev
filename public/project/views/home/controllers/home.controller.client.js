@@ -5,7 +5,9 @@
         .controller("HomeController", HomeController);
 
     function HomeController($location) {
-        console.log("hello " + $location.url())
+        console.log("hello " + $location.url());
+
+        var vm = this;
     }
 
 })();

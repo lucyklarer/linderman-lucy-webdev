@@ -9,6 +9,26 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
+            .when("/profile", {
+                templateUrl: "views/user/templates/profile.view.client.html",
+                controller: "ProfileController",
+                controllerAs: "model"
+            })
+            .when("/profile/edit", {
+                templateUrl: "views/user/templates/profile-edit.view.client.html",
+                controller: "EditProfileController",
+                controllerAs: "model"
+            })
+            .when("/followers", {
+                templateUrl: "views/user/templates/followers.view.client.html",
+                controller: "FollowersController",
+                controllerAs: "model"
+            })
+            .when("/following", {
+                templateUrl: "views/user/templates/following.view.client.html",
+                controller: "FollowingController",
+                controllerAs: "model"
+            })
             .when("/user/:uid", {
                 templateUrl: "views/user/templates/profile.view.client.html",
                 controller: "ProfileController",
