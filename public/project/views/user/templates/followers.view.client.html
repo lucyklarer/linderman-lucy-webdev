@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-between collapse navbar-collapse navbar-style" id="navbarSupportedContent">
         <ul class="flex-grow-0 nav navbar-nav navbar-style navbar-dark">
             <li class="nav-item navbar-dark navbar-style">
-                <a class="nav-link" href="#">Browse</a>
+                <a class="nav-link" href="#/SearchResults">Browse</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-style navbar-dark navbar-right">
@@ -19,7 +19,7 @@
                 <form class="form-inline">
                     <label class="sr-only" for="searchInput">search input</label>
                     <input class="form-control m-1" id="searchInput" type="search" placeholder="" aria-label="Search">
-                    <button class="btn btn-outline-light m-1" type="submit">Search</button>
+                    <button class="button btn btn-outline-light m-1" type="submit">Search</button>
                     <label class="sr-only" for="usernameInput">username</label>
                     <input class="form-control m-1" id="usernameInput" type="text" placeholder="username" aria-label="username">
                     <label class="sr-only" for="passwordInput">password</label>
@@ -27,7 +27,7 @@
                 </form>
             </li>
             <li class="nav-item navbar-dark navbar-style">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="#/profile">Login</a>
             </li>
             <li class="nav-item navbar-dark navbar-style">
                 <a class="nav-link" href="#/register">Register</a>
@@ -39,29 +39,36 @@
 
 <div class="container mt-3">
     <h3>Followers</h3>
-    <div class="row">
-        <img src="/images/blank_profile.png" alt="profile pic" height="75" width="75">
-        <a href="#/profile">name</a>
-
-    </div>
-
-    <div class="row">
-        <img src="/images/blank_profile.png" alt="profile pic" height="75" width="75">
-        <a href="#/profile">name</a>
-
-    </div>
-
-    <div class="row">
-        <img src="/images/blank_profile.png" alt="profile pic" height="75" width="75">
-        <a href="#/profile">name</a>
-
-    </div>
-
-    <div class="row">
-        <img src="/images/blank_profile.png" alt="profile pic" height="75" width="75">
-        <a href="#/profile">name</a>
-
-    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">name</th>
+            <th scope="col">username</th>
+            <th scope="col">email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>mako</td>
+            <td>consolecowboy</td>
+            <td>sharkboy@therapidevening.org</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>cass</td>
+            <td>cass</td>
+            <td>cassander.timaeus.berence@apostolos.gov</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Aria</td>
+            <td>aria_joie</td>
+            <td>joie@joypark.com</td>
+        </tr>
+        </tbody>
+    </table>
 
 
 

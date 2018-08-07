@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<nav class="navbar navbar-style navbar-dark navbar-expand-md navbar-fixed-top">
+    <a class="navbar-brand navbar-style" href="#">
+        aqua regia
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="d-flex justify-content-between collapse navbar-collapse navbar-style" id="navbarSupportedContent">
+        <ul class="flex-grow-0 nav navbar-nav navbar-style navbar-dark">
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/SearchResults">Browse</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-style navbar-dark navbar-right">
+            <li class="nav-item navbar-dark navbar-style">
+                <form class="form-inline">
+                    <label class="sr-only" for="searchInput">search input</label>
+                    <input class="form-control m-1" id="searchInput" type="search" placeholder="" aria-label="Search">
+                    <button class="button btn btn-outline-light m-1" type="submit">Search</button>
+                    <label class="sr-only" for="usernameInput">username</label>
+                    <input class="form-control m-1" id="usernameInput" type="text" placeholder="username" aria-label="username">
+                    <label class="sr-only" for="passwordInput">password</label>
+                    <input class="form-control m-1" id="passwordInput" type="password" placeholder="password" aria-label="password">
+                </form>
+            </li>
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/profile">Login</a>
+            </li>
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/register">Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-3">
+            <img src="/images/potc_poster.jpg" alt="..." class="img-thumbnail">
+        </div>
+        <div class="col-9">
+
+            <div class="list-group list-group-flush">
+                <a href="#/workDetails" class="list-group-item">Pirates of the Caribbean</a>
+                <a class="list-group-item">film</a>
+                <a class="list-group-item">Jerry Bruckheimer</a>
+                <a class="list-group-item">2003</a>
+            </div>
+        </div>
+    </div>
+    <p>influences</p>
+    <p>works influenced by this one</p>
+</div>

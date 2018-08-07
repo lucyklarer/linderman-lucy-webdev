@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<nav class="navbar navbar-style navbar-dark navbar-expand-md navbar-fixed-top">
+    <a class="navbar-brand navbar-style" href="#">
+        aqua regia
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="d-flex justify-content-between collapse navbar-collapse navbar-style" id="navbarSupportedContent">
+        <ul class="flex-grow-0 nav navbar-nav navbar-style navbar-dark">
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/SearchResults">Browse</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-style navbar-dark navbar-right">
+            <li class="nav-item navbar-dark navbar-style">
+                <form class="form-inline">
+                    <label class="sr-only" for="searchInput">search input</label>
+                    <input class="form-control m-1" id="searchInput" type="search" placeholder="" aria-label="Search">
+                    <button class="button btn btn-outline-light m-1" type="submit">Search</button>
+                    <label class="sr-only" for="usernameInput">username</label>
+                    <input class="form-control m-1" id="usernameInput" type="text" placeholder="username" aria-label="username">
+                    <label class="sr-only" for="passwordInput">password</label>
+                    <input class="form-control m-1" id="passwordInput" type="password" placeholder="password" aria-label="password">
+                </form>
+            </li>
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/profile">Login</a>
+            </li>
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/register">Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container mt-3">
+
+    <form class="form-inline">
+        <label class="sr-only" for="currentSearch">current search terms</label>
+        <input class="form-control m-1" id="currentSearch" type="search" placeholder="guillermo del toro" aria-label="Search">
+        <button class="btn btn-primary m-1" type="submit">Search</button>
+    </form>
+    <p>creator results</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Guillermo del Toro</td>
+        <td>active</td>
+    </tr>
+    </tbody>
+</table>
+    <p>work results</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">year</th>
+            <th scope="col">medium</th>
+        </tr>
+        <tr>
+            <th scope="row">1</th>
+            <td>Crimson Peak</td>
+            <td>2015</td>
+            <td>film</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Pacific Rim</td>
+            <td>2013</td>
+            <td>film</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>The Shape of Water</td>
+            <td>2017</td>
+            <td>film</td>
+        </tr>
+        </thead>
+    </table>
+</div>

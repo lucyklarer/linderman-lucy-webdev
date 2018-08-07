@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<nav class="navbar navbar-style navbar-dark navbar-expand-md navbar-fixed-top">
+    <a class="navbar-brand navbar-style" href="#">
+        aqua regia
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="d-flex justify-content-between collapse navbar-collapse navbar-style" id="navbarSupportedContent">
+        <ul class="flex-grow-0 nav navbar-nav navbar-style navbar-dark">
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/SearchResults">Browse</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-style navbar-dark navbar-right">
+            <li class="nav-item navbar-dark navbar-style">
+                <form class="form-inline">
+                    <label class="sr-only" for="searchInput">search input</label>
+                    <input class="form-control m-1" id="searchInput" type="search" placeholder="" aria-label="Search">
+                    <button class="button btn btn-outline-light m-1" type="submit">Search</button>
+                    <label class="sr-only" for="usernameInput">username</label>
+                    <input class="form-control m-1" id="usernameInput" type="text" placeholder="username" aria-label="username">
+                    <label class="sr-only" for="passwordInput">password</label>
+                    <input class="form-control m-1" id="passwordInput" type="password" placeholder="password" aria-label="password">
+                </form>
+            </li>
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/profile">Login</a>
+            </li>
+            <li class="nav-item navbar-dark navbar-style">
+                <a class="nav-link" href="#/register">Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-4">
+    <form>
+        <div class="form-group">
+            <label for="workTitle">Title</label>
+            <input type="text" class="form-control" id="workTitle" placeholder="title">
+        </div>
+        <div class="form-group">
+            <label for="workMedium">Medium</label>
+            <input type="text" class="form-control" id="workMedium" placeholder="medium">
+        </div>
+        <div class="form-group">
+            <label for="workCreator">Creator</label>
+            <input type="text" class="form-control" id="workCreator" placeholder="creator">
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" class="form-control" id="year" placeholder="1992">
+        </div>
+        <div class="form-group">
+            <label for="source">Source</label>
+            <input type="url" class="form-control" id="source" placeholder="imdb, wikipedia, etc">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+        <div class="col">
+
+            <div class="form-group">
+                <label for="posterUpload">upload file</label>
+                <input type="file" class="form-control-file" id="posterUpload">
+                <label for="posterLink">link to image</label>
+                <input type="url" class="form-control" id="posterLink" placeholder="paste link to image here">
+                <label for="searchWorks">search works</label>
+                <input class="form-control" id="searchWorks" type="search" placeholder="search for works to link to this one" aria-label="Search">
+
+                <label for="tagsInput">add tags</label>
+                <textarea id="tagsInput" class="form-control" rows="4" placeholder="separate tags with commas"></textarea>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>

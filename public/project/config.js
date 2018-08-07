@@ -29,6 +29,21 @@
                 controller: "FollowingController",
                 controllerAs: "model"
             })
+            .when("/SearchResults", {
+                templateUrl:"views/search/templates/search-results.view.client.html",
+                controller: "SearchResultsController",
+                controllerAs: "model"
+            })
+            .when("/workDetails", {
+                templateUrl: "views/work/templates/work-details.view.client.html",
+                controller: "WorkDetailsController",
+                controllerAs: "model"
+            })
+            .when("/creatorDetails", {
+                templateUrl: "views/creator/templates/creator-details.view.client.html",
+                controller: "CreatorDetailsController",
+                controllerAs: "model"
+            })
             .when("/user/:uid", {
                 templateUrl: "views/user/templates/profile.view.client.html",
                 controller: "ProfileController",
