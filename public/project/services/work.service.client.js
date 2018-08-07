@@ -22,6 +22,7 @@
 
         var api = {
             "createWork" : createWork,
+            "findWorkByTitle" : findWorkByTitle,
             "findWorkById" : findWorkById,
             "findWorksByCreator" : findWorksByCreator,
             "findWorksByYear" : findWorksByYear,
@@ -30,28 +31,86 @@
         };
 
         function createWork(work) {
+            console.log("hello create work " + work.title);
+            var exist = findWorkByTitle(work.title);
+            if(exist===null) {
+                work._id = (works.length + 1).toString();
+                works.push(work);
+                console.log("created work " + work.title);
+            }
+        }
 
+        function findWorkByTitle(title) {
+            console.log("hello findWorkByTitle " + title);
+            var i;
+            for (i = 0; i < works.length; i++) {
+                if (works[i].title === title) {
+                    console.log("found work " + works[i]._id);
+                    return works[i];
+                }
+            }
+            return null;
         }
 
         function findWorkById(workID) {
-
+            console.log("hello findWorkById " + workID);
+            var i;
+            for (i = 0; i < works.length; i++) {
+                if (works[i]._id === workID) {
+                    console.log("found work " + works[i].title);
+                    return works[i];
+                }
+            }
+            return null;
         }
 
-        function findWorksByCreator(creator) {
-
+        function findWorksByCreator(creatorID) {
+            var i;
+            var creatorWorks = [];
+            for (i = 0; i < works.length; i++) {
+                if (works[i]._id === creatorID) {
+                    console.log("found work " + works[i].title);
+                    console.log("work id is " + works[i]._id);
+                    creatorWorks.push(works[i]);
+                }
+            }
+            return creatorWorks;
         }
 
         function findWorksByYear(year) {
-
+            var i;
+            var yearWorks = [];
+            for (i = 0; i < works.length; i++) {
+                if (works[i].year === year) {
+                    console.log("found work " + works[i].title);
+                    console.log("work id is " + works[i]._id);
+                    yearWorks.push(works[i]);
+                }
+            }
+            return yearWorks;
         }
 
 
         function updateWork(workID, work) {
-
+            console.log("hello update work " + workID);
+            var i;
+            for (i = 0; i < works.length; i++) {
+                if (works[i]._id === workID) {
+                    works[i] = work;
+                }
+            }
         }
 
         function deleteWork(workID) {
-
+            console.log("hello delete work :(");
+            console.log("works length is " + works.length);
+            var i;
+            for (i = 0; i < works.length; i++) {
+                if (works[i]._id === workID) {
+                    works.splice(i, 1);
+                    console.log("deleted work, now works length is " + works.length);
+                }
+            }
         }
 
         return api;
