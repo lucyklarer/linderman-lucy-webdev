@@ -20,6 +20,7 @@ module.exports = function(app) {
     function createWebsite(req, res) {
         console.log('createwebsite hello server side');
         var newWebsite = req.body;
+        newWebsite._id = (websites.length + 1).toString();
         console.log('createwebsite new website is ' + newWebsite);
         websites.push(newWebsite);
         res.json(websites);
@@ -65,16 +66,22 @@ module.exports = function(app) {
     }
 
     function deleteWebsite(req, res) {
-        console.log('hello deletewebsite server side');
+        console.log('hello deletewebsite server side websites length is ' + websites.length);
         var id = req.params.websiteId;
-        console.log('websiteid is ' + id);
+        console.log('deletewebsite websiteid is ' + id);
         var index;
+        var toDelete = undefined;
         for(index = 0; index < websites.length; index++) {
-            if(websites[index].developerId === id) {
-                websites.splice(index, 1);
+            if(websites[index]._id === id) {
+                console.log('hello found website to delete');
+                toDelete = index;
             }
         }
-
+        if(toDelete !== undefined) {
+            console.log('deleting website at index ' + toDelete);
+            websites.splice(toDelete, 1);
+        }
+        console.log('goodbye deletewebsite server side websites length is ' + websites.length);
         res.json(websites);
     }
 

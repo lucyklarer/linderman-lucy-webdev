@@ -31,6 +31,7 @@ module.exports = function(app) {
     function createUser(req, res) {
         console.log("hello user service server side create user");
         var newUser = req.body;
+        newUser._id = users.length + 1;
         users.push(newUser);
         res.json(users);
 
@@ -84,15 +85,18 @@ module.exports = function(app) {
 
     function deleteUser (req, res) {
         console.log("hello user service server side delete user");
+        console.log('current size of users list is ' + users.length);
         var id = req.params.userId;
         var index;
+        var toDelete;
         for(index = 0; index < users.length; index++) {
             if(users[index]._id === id) {
                 console.log('found id match');
-                users.splice(index, 1);
+                toDelete = index;
             }
         }
-
+        users.splice(toDelete, 1);
+        console.log('current size of users list is ' + users.length);
         res.json(users);
     }
 

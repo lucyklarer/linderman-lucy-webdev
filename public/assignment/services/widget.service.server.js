@@ -20,6 +20,7 @@ module.exports = function(app) {
 
     function createWidget(req, res) {
         var newWidget = req.body;
+        newWidget._id = widgets.length + 1;
         widgets.push(newWidget);
         res.json(widgets);
     }

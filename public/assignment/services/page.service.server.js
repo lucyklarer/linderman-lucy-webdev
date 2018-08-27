@@ -15,6 +15,7 @@ module.exports = function(app) {
 
     function createPage(req, res) {
         var newPage = req.body;
+        newPage._id = (pages.length + 1).toString();
         pages.push(newPage);
         res.json(pages);
     }
@@ -54,14 +55,18 @@ module.exports = function(app) {
         res.json(pages);
     }
 
-    function deletePage(req, res) {
+    function deletePage(req, res)  {
+        console.log('deletepage current size of pages array is ' + pages.length);
         var id = req.params.pageId;
         var index;
+        var toDelete;
         for(index = 0; index < pages.length; index++) {
             if(pages[index]._id === id) {
-                pages.splice(index, 1);
+                toDelete = index;
             }
         }
+        pages.splice(toDelete, 1);
+        console.log('deletepage current size of pages array is ' + pages.length);
         res.json(pages);
     }
 

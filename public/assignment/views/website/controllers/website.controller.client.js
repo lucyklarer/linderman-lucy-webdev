@@ -9,6 +9,7 @@
         var vm = this;
         vm.userId = $routeParams["uid"];
         console.log("userId is " + vm.userId);
+        vm.websites = {};
 
         function init() {
             WebsiteService.findWebsitesByUser(vm.userId, callback);
@@ -18,8 +19,10 @@
         }
         init();
     }
+
     function NewWebsiteController(WebsiteService, $routeParams) {
         var vm = this;
+        vm.websites = {};
         vm.website = {};
         vm.userId = $routeParams["uid"];
 
@@ -42,8 +45,10 @@
             }
         }
     }
+
     function EditWebsiteController($routeParams, WebsiteService) {
         var vm = this;
+        vm.websites = {};
         vm.userId = $routeParams["uid"];
         vm.websiteId = $routeParams["wid"];
         vm.updateWebsite = updateWebsite;
@@ -80,6 +85,8 @@
         }
 
         function deleteWebsite() {
+            console.log('hello vm website is ' + vm.website);
+            console.log('hello vm website id is ' + vm.websiteId);
             WebsiteService.deleteWebsite(vm.websiteId, callback);
             function callback(response) {
                 console.log('hello deleteWebsite callback ' + response);
