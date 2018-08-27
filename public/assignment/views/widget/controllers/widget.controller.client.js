@@ -13,7 +13,11 @@
         vm.setUrl = setUrl;
 
         function init() {
-            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+            WidgetService.findWidgetsByPageId(vm.pageId, callback);
+            function callback(response) {
+                vm.widgets = response;
+            }
+
         }
         init();
 
@@ -47,7 +51,10 @@
         newWidget = {"widgetType": ""};
 
         function init() {
-            vm.widgetId = WidgetService.createWidget(vm.pageId, newWidget);
+            WidgetService.createWidget(vm.pageId, newWidget, callback);
+            function callback(response) {
+                vm.widgets = response;
+            }
         }
         init();
 
@@ -78,21 +85,25 @@
         vm.widgetId = $routeParams["wgid"];
         vm.widget = {};
         function init() {
-            vm.current = WidgetService.findWidgetById(vm.widgetId);
-            switch(vm.current.widgetType) {
-                case "HEADING":
-                    vm.widget.text = vm.current.text;
-                    vm.widget.size = vm.current.size;
-                    break;
-                case "IMAGE":
-                    vm.widget.url = vm.current.url;
-                    vm.widget.width = vm.current.width;
-                    break;
-                case "YOUTUBE":
-                    vm.widget.url = vm.current.url;
-                    vm.widget.width = vm.current.width;
-                    break;
+            WidgetService.findWidgetById(vm.widgetId, callback);
+            function callback(response) {
+                vm.current = response;
+                switch(vm.current.widgetType) {
+                    case "HEADING":
+                        vm.widget.text = vm.current.text;
+                        vm.widget.size = vm.current.size;
+                        break;
+                    case "IMAGE":
+                        vm.widget.url = vm.current.url;
+                        vm.widget.width = vm.current.width;
+                        break;
+                    case "YOUTUBE":
+                        vm.widget.url = vm.current.url;
+                        vm.widget.width = vm.current.width;
+                        break;
+                }
             }
+
         }
         init();
 
@@ -112,11 +123,20 @@
                     break;
             }
             console.log("updating widget");
-            WidgetService.updateWidget(vm.widgetId, update);
+            WidgetService.updateWidget(vm.widgetId, update, callback);
+            function callback(response) {
+                console.log('hello updatewidget callback');
+                vm.widgets = response;
+            }
         }
+
         function deleteWidget() {
             console.log("deleting widget " + vm.widgetId);
-            WidgetService.deleteWidget(vm.widgetId);
+            WidgetService.deleteWidget(vm.widgetId, callback);
+            function callback(response) {
+                console.log('hello deleteWidget callback');
+                vm.widgets = response;
+            }
         }
     }
 })();

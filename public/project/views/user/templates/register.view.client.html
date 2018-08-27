@@ -27,7 +27,7 @@
            class="form-control"
            placeholder="verify password"
            id="verify-password"/>
-    <a href="#/profile"
+    <a ng-click="model.register(model.user.username, model.user.password, model.user.email)"
        class="btn btn-primary btn-block">Register</a>
     <a class="btn btn-danger btn-block"
        href="#/home">Cancel</a>

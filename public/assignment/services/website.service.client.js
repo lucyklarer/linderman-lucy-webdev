@@ -2,17 +2,8 @@
     angular
         .module("WebAppMaker")
         .factory("WebsiteService", WebsiteService);
-    function WebsiteService() {
-        var websites =
-            [
-                { "_id":"123", "name":"Facebook", "developerId":"456", "description":"Lorem" },
-                { "_id": "234", "name": "Twitter",     "developerId": "456", "description": "Lorem" },
-                { "_id": "456", "name": "Gizmodo",     "developerId": "456", "description": "Lorem" },
-                { "_id": "890", "name": "Go",          "developerId": "123", "description": "Lorem" },
-                { "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
-                { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
-                { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
-            ];
+    function WebsiteService($http) {
+
         var api = {
             "createWebsite"   : createWebsite,
             "findWebsitesByUser" : findWebsitesByUser,
@@ -21,62 +12,35 @@
             "deleteWebsite" : deleteWebsite
         };
         return api;
-        function createWebsite(userId, website) {
-            //website.developerId = userId;
-            website._id = (websites.length + 1).toString();
-            console.log("website id is " + website._id);
-            websites.push(website);
-            console.log("adding website " + website.name);
+        function createWebsite(userId, website, callback) {
+            console.log('hello create website given userid is ' + userId);
+            $http
+                .post('/api/user/' + userId + '/website', website)
+                .success(callback);
         }
-        function findWebsitesByUser(userId) {
-            var i;
-            var userWebsites = [];
-            for (i = 0; i < websites.length; i++) {
-                if (websites[i].developerId === userId) {
-                    console.log("found website " + websites[i].name);
-                    console.log("website id is " + websites[i]._id);
-                    userWebsites.push(websites[i]);
-                }
-            }
-            return userWebsites;
+        function findWebsitesByUser(userId, callback) {
+            console.log('hello findwebsitesbyuser given userid  is ' + userId);
+            $http
+                .get('/api/user/' + userId + '/website')
+                .success(callback);
         }
-        function findWebsiteById(websiteId) {
-            var i;
-
-            for (i = 0; i < websites.length; i++) {
-                if (websites[i]._id === websiteId) {
-                    console.log("found website " + websites[i].name);
-                    return websites[i];
-                }
-            }
-
-            console.log("couldn't find website");
-            return null;
+        function findWebsiteById(websiteId, callback) {
+            console.log('hello findwebsitebyid id is ' + websiteId);
+            $http
+                .get('/api/website/' + websiteId)
+                .success(callback);
         }
-        function updateWebsite(websiteId, website) {
-            console.log(websites.length + " websites");
-            var i;
-            for (i = 0; i < websites.length; i++) {
-                if (websites[i]._id === websiteId) {
-                    websites[i] = website;
-                    console.log("updated website " + websites[i].name);
-                    console.log(websites.length + " websites");
-                }
-            }
-            console.log("couldn't update website");
+        function updateWebsite(websiteId, website, callback) {
+            console.log('hello updateWebsite id is ' + websiteId);
+            $http
+                .put('/api/website/' + website)
+                .success(callback);
         }
-        function deleteWebsite(websiteId) {
-            console.log("trying to delete website with id " + websiteId);
-            var i;
-            for (i = 0; i < websites.length; i++) {
-                console.log("looking at website with id " + websites[i]._id);
-                if (websites[i]._id === websiteId) {
-                    websites.splice(i, 1);
-                    console.log("deleted website " + websiteId);
-                    return;
-                }
-            }
-            console.log("couldn't delete website");
+        function deleteWebsite(websiteId, callback) {
+            console.log('hello deleteWebsite id is ' + websiteId);
+            $http
+                .delete('/api/website/' + websiteId)
+                .success(callback);
         }
     }
 })();

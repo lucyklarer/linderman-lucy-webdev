@@ -27,11 +27,12 @@
     }
 
     function RegisterController(UserService, $location) {
+        console.log("hello entering register controller");
         var vm = this;
         vm.register = register;
 
-        function register(username, password) {
-            var addUser = {_id: "", username: username, password: password, displayName: "", email: ""};
+        function register(username, password, email) {
+            var addUser = {_id: "", username: username, password: password, displayName: "", email: email};
             UserService.createUser(addUser);
             console.log("created user " + username);
             console.log("new user id is " + UserService.findUserByUsername(username)._id);
@@ -62,9 +63,13 @@
 
     function FollowersController() {
 
+        var vm = this;
+
     }
 
     function FollowingController() {
+
+        var vm = this;
 
     }
 

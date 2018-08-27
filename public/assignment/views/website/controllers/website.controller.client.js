@@ -11,7 +11,10 @@
         console.log("userId is " + vm.userId);
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+            WebsiteService.findWebsitesByUser(vm.userId, callback);
+            function callback(response) {
+                vm.websites = response;
+            }
         }
         init();
     }
@@ -23,13 +26,20 @@
         vm.newWebsite = newWebsite;
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+            WebsiteService.findWebsitesByUser(vm.userId, callback);
+            function callback(response) {
+                vm.websites = response;
+            }
         }
         init();
 
         function newWebsite() {
             var addWebsite = { _id: "", name: vm.website.name, developerId: vm.userId, description: vm.website.description};
-            WebsiteService.createWebsite(vm.userId, addWebsite);
+            WebsiteService.createWebsite(vm.userId, addWebsite, callback);
+            function callback(response) {
+                console.log('hello new website callback');
+                vm.websites = response;
+            }
         }
     }
     function EditWebsiteController($routeParams, WebsiteService) {
@@ -42,12 +52,19 @@
 
 
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
-            console.log("user has " + vm.websites.length + " websites");
-            vm.current = WebsiteService.findWebsiteById(vm.websiteId);
-            console.log("current website is " + vm.current.name);
-            vm.website.name = vm.current.name;
-            vm.website.description = vm.current.description;
+            WebsiteService.findWebsitesByUser(vm.userId, websitesCallback);
+            function websitesCallback(response) {
+                vm.websites = response;
+                console.log("user has " + vm.websites.length + " websites");
+            }
+
+            WebsiteService.findWebsiteById(vm.websiteId, editWebsiteCallback);
+            function editWebsiteCallback(response) {
+                vm.current = response;
+                console.log("current website is " + vm.current.name);
+                vm.website.name = vm.current.name;
+                vm.website.description = vm.current.description;
+            }
         }
         init();
 
@@ -55,10 +72,19 @@
             console.log("updating website " + vm.website.name);
             console.log("userID is " + vm.userId);
             updateWebsite = {_id: vm.websiteId, name: vm.website.name, developerId: vm.userId, description: vm.website.description};
-            WebsiteService.updateWebsite(vm.websiteId, updateWebsite);
+            WebsiteService.updateWebsite(vm.websiteId, updateWebsite, callback);
+            function callback(response) {
+                console.log('hello updatewebsite callback ' + response);
+                vm.websites = response;
+            }
         }
+
         function deleteWebsite() {
-            WebsiteService.deleteWebsite(vm.websiteId);
+            WebsiteService.deleteWebsite(vm.websiteId, callback);
+            function callback(response) {
+                console.log('hello deleteWebsite callback ' + response);
+                vm.websites = response;
+            }
         }
     }
 })();

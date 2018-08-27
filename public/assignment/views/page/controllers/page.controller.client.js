@@ -12,7 +12,10 @@
 
 
         function init() {
-            vm.pages = PageService.findPagesByWebsiteId(vm.websiteId);
+            PageService.findPagesByWebsiteId(vm.websiteId, callback);
+            function callback(response) {
+                vm.pages = response;
+            }
         }
         init();
     }
@@ -26,7 +29,10 @@
 
         function newPage() {
             var addPage = { _id: "", name: vm.page.name, websiteId: vm.websiteId, description: vm.page.title};
-            PageService.createPage(vm.websiteId, addPage)
+            PageService.createPage(vm.websiteId, addPage, callback);
+            function callback(response) {
+                console.log('hello new page callback ' + response);
+            }
         }
     }
     function EditPageController($routeParams, PageService) {
@@ -39,20 +45,34 @@
         vm.deletePage = deletePage;
 
         function init() {
-            vm.current = PageService.findPageById(vm.pageId);
-            console.log("curent pageId is " + vm.pageId);
-            console.log("current page is " + vm.current.name);
-            vm.page.name = vm.current.name;
-            vm.page.title = vm.current.description;
+            PageService.findPageById(vm.pageId, callback);
+            vm.current = {};
+            function callback(response) {
+                console.log('hello init editpagecontroller callback');
+                vm.current = response;
+                console.log("curent pageId is " + vm.pageId);
+                console.log("current page is " + vm.current.name);
+                vm.page.name = vm.current.name;
+                vm.page.title = vm.current.description;
+            }
+
         }
         init();
 
         function updatePage() {
             updatePage = { _id: vm.pageId, name: vm.page.name, websiteId: vm.websiteId, description: vm.page.title};
-            PageService.updatePage(vm.pageId, updatePage)
+            PageService.updatePage(vm.pageId, updatePage, callback);
+            function callback(response) {
+                console.log('hello updatepage callback ' + response);
+                vm.pages = response;
+            }
         }
         function deletePage() {
-            PageService.deletePage(vm.pageId);
+            PageService.deletePage(vm.pageId, callback);
+            function callback(response) {
+                console.log('hello deletepage callback ' + response);
+                vm.pages = response;
+            }
         }
     }
 })();

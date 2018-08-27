@@ -7,10 +7,10 @@
         var users =
             [
                 {_id: "000", username: "consolecowboy", email: "sharkboy@therapidevening.org", displayName: "mako"},
-                {_id: "001", username: "cass", email: "cassander.timaeus.berence@apostolos.gov", displayName: "cass"},
+                {_id: "001", username: "cass", email: "cassander.timaeus.berenice@apostolos.gov", displayName: "cass"},
                 {_id: "002", username: "aria_joie", email: "joie@joypark.com", displayName: "Aria"},
                 {_id: "003", username: "automated_dynamics", email: "audy@kingdomcome.lda", displayName: "AuDy"},
-                {_id: "004", username: "jacerethal", email: "stratosphere@jace.rqnd", displayName: "Jace"},
+                {_id: "004", username: "jacerethal", email: "stratusphere@jace.rqnd", displayName: "Jace"},
                 {_id: "005", username: "addaxdawn", email: "hardwonpeace@addax.rqnd", displayName: "Addax"},
                 {_id: "006", username: "noble_quartz", email: "acereporter@jamil.rqnd", displayName: "Jamil Q-N"},
                 {_id: "007", username: "godlove", email: "orth@kingdomcome.lda", displayName: "Orth"}

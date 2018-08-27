@@ -3,14 +3,8 @@
         .module("WebAppMaker")
         .factory("UserService", UserService);
 
-    function UserService() {
-        var users =
-            [
-                {_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-                {_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
-                {_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
-                {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
-            ];
+    function UserService($http) {
+
         var api = {
             "createUser"   : createUser,
             "findUserById" : findUserById,
@@ -20,57 +14,49 @@
             "deleteUser" : deleteUser
     };
 
-        function createUser(user) {
-            var exist = findUserByUsername(user.username);
-            if(exist===null) {
-                user._id = (users.length + 1).toString();
-                users.push(user);
-                console.log("created user " + user.username);
-            }
+        function createUser(user, callback) {
+            console.log('hello client side create user ' + user);
+            $http
+                .post('/api/user', user)
+                .success(callback);
         }
-        function findUserById(id) {
-            var i;
-            for (i = 0; i < users.length; i++) {
-                if (users[i]._id === id) {
-                    return users[i];
-                }
-            }
-            return null;
+
+        function findUserById(id, callback) {
+            console.log('hello client side finduserbyid ' + id);
+            $http
+                .get('/api/user/' + id)
+                .success(callback);
         }
-        function findUserByUsername(username) {
-            var i;
-            for (i = 0; i < users.length; i++) {
-                if (users[i].username === username) {
-                    return users[i];
-                }
-            }
-            return null;
+
+        function findUserByUsername(username, callback) {
+            console.log('hello client side find user by username ' + username);
+            $http
+                .get('/api/user?username=' + username)
+                .success(callback);
         }
-        function findUserByCredentials(username, password) {
-            var i;
-            for (i = 0; i < users.length; i++) {
-                if (users[i].username === username && users[i].password === password) {
-                    return users[i];
-                }
-            }
-            return null;
+
+        function findUserByCredentials(username, password, callback) {
+            console.log('hello client side find user by credentials ' + username + ', ' + password);
+            $http
+                .get('/api/user?username=' + username + '&password=' + password)
+                .success(callback);
         }
-        function updateUser(userID, user) {
-            var i;
-            for (i = 0; i < users.length; i++) {
-                if (users[i]._id === userID) {
-                    users[i] = user;
-                }
-            }
+
+        function updateUser(userID, user, callback) {
+            console.log('hello client side update user ' + userID);
+            $http
+                .put('/api/user/' + userId, user)
+                .success(callback);
+
         }
-        function deleteUser(userID) {
-            var i;
-            for (i = 0; i < users.length; i++) {
-                if (users[i]._id === userID) {
-                    users.splice(i, 1);
-                }
-            }
+
+        function deleteUser(userID, callback) {
+            console.log('hello client side delete user ' + userID);
+            $http
+                .delete('/api/user/' + userID)
+                .success(callback);
         }
+
         return api;
     }
 })();
