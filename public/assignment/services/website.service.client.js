@@ -33,7 +33,7 @@
         function updateWebsite(websiteId, website, callback) {
             console.log('hello updateWebsite id is ' + websiteId);
             $http
-                .put('/api/website/' + website)
+                .put('/api/website/' + websiteId, website)
                 .success(callback);
         }
         function deleteWebsite(websiteId, callback) {

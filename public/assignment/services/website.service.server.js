@@ -55,11 +55,16 @@ module.exports = function(app) {
     function updateWebsite(req, res) {
         console.log('hello updatewebsite server side');
         var id = req.params.websiteId;
+        console.log('req params ' + req.params.websiteId);
+        console.log('req body ' + req.body);
         console.log('websiteid is ' + id);
         var index;
         for(index = 0; index < websites.length; index++) {
-            if(websites[index].developerId === id) {
+            if(websites[index]._id === id) {
+                console.log('found website to update ' + websites[index].name);
+                console.log('index in array is ' + index);
                 websites[index] = req.body;
+                console.log('updated website to ' + websites[index].name);
             }
         }
         res.json(websites);

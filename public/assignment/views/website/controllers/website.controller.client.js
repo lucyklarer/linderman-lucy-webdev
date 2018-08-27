@@ -76,11 +76,15 @@
         function updateWebsite() {
             console.log("updating website " + vm.website.name);
             console.log("userID is " + vm.userId);
-            updateWebsite = {_id: vm.websiteId, name: vm.website.name, developerId: vm.userId, description: vm.website.description};
-            WebsiteService.updateWebsite(vm.websiteId, updateWebsite, callback);
+            console.log('vm website name is ' + vm.website.name);
+            console.log('vm website description is ' + vm.website.description);
+            var update = {"_id": vm.websiteId, "name": vm.website.name, "developerId": vm.userId, "description": vm.website.description};
+            console.log('update should be ' + update.toString());
+            WebsiteService.updateWebsite(vm.websiteId, update, callback);
             function callback(response) {
                 console.log('hello updatewebsite callback ' + response);
                 vm.websites = response;
+                init();
             }
         }
 
@@ -91,6 +95,7 @@
             function callback(response) {
                 console.log('hello deleteWebsite callback ' + response);
                 vm.websites = response;
+                init();
             }
         }
     }
