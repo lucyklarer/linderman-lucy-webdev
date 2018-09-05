@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<div ng-controller="NewWidgetController">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -21,8 +22,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a ng-click="model.handleType(1)"
-                        href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
+                <a ng-click="model.initNewWidget(1)" href="#">
                     Header
                 </a>
 
@@ -88,7 +88,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a ng-click="model.handleType(2)" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
+                <a ng-click="model.initNewWidget(2)" href="#">
                     Image
                 </a>
 
@@ -99,7 +99,7 @@
     <div class="row row-spacing">
         <div class="col-sm-12">
             <div class="text-left">
-                <a ng-click="model.handleType(3)" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widgetId}}">
+                <a ng-click="model.initNewWidget(3)" href="#">
                     YouTube
                 </a>
 
@@ -141,3 +141,4 @@
         </span>
     </div>
 </nav>
+</div>

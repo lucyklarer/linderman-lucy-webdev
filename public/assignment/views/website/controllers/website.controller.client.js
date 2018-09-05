@@ -12,6 +12,7 @@
         vm.websites = {};
 
         function init() {
+            console.log("hello website list controller init");
             WebsiteService.findWebsitesByUser(vm.userId, callback);
             function callback(response) {
                 vm.websites = response;
@@ -29,6 +30,7 @@
         vm.newWebsite = newWebsite;
 
         function init() {
+            console.log("hello new website controller init");
             WebsiteService.findWebsitesByUser(vm.userId, callback);
             function callback(response) {
                 vm.websites = response;
@@ -57,6 +59,7 @@
 
 
         function init() {
+            console.log("hello edit website init");
             WebsiteService.findWebsitesByUser(vm.userId, websitesCallback);
             function websitesCallback(response) {
                 vm.websites = response;

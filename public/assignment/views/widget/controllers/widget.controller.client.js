@@ -6,6 +6,7 @@
         .controller("EditWidgetController", EditWidgetController);
 
     function WidgetListController($routeParams, WidgetService) {
+        console.log("hello widgetlistcontroller");
         var vm = this;
         vm.pageId = $routeParams["pid"];
         vm.websiteId = $routeParams["wid"];
@@ -13,6 +14,7 @@
         vm.setUrl = setUrl;
 
         function init() {
+            console.log("hello entering widgetlistcontroller init");
             WidgetService.findWidgetsByPageId(vm.pageId, callback);
             function callback(response) {
                 vm.widgets = response;
@@ -20,6 +22,7 @@
 
         }
         init();
+
 
         function setUrl(widget) {
             var element;
@@ -37,7 +40,8 @@
             }
         }
     }
-    function NewWidgetController($routeParams, WidgetService) {
+
+    function NewWidgetController($routeParams, WidgetService, $location) {
         console.log("entering new widget controllers");
         var vm = this;
         vm.pageId = $routeParams["pid"];
@@ -46,35 +50,52 @@
 
         vm.init = init;
         vm.handleType = handleType;
+        vm.initNewWidget = initNewWidget;
 
         var newWidget = {};
-        newWidget = {"widgetType": ""};
+        newWidget = {"widgetType": "undefined", "pageId": vm.pageId};
 
         function init() {
-            WidgetService.createWidget(vm.pageId, newWidget, callback);
-            function callback(response) {
-                vm.widgets = response;
-            }
+            console.log("entering newwidgetcontroller init");
+
         }
         init();
 
+        function initNewWidget(type) {
+            console.log("hello entering initnewwidget type is " + type);
+            newWidget.widgetType = handleType(type);
+            console.log("create new widget type " + newWidget.widgetType);
+            WidgetService.createWidget(vm.pageId, newWidget, callback);
+            function callback(response) {
+                console.log("hello init new widget callback");
+                newWidget._id = response;
+                console.log("hello new widget id is " + newWidget._id);
+                vm.widgetId = newWidget._id;
+                console.log("hello new widget id is " + vm.widgetId);
+                $location.url("/user/" + vm.userId + "/website/" + vm.websiteId + "/page/" + vm.pageId + "/widget/" + vm.widgetId);
+            }
+        }
+
         function handleType(type) {
+            console.log("hello handle type given type is " + type);
             switch(type) {
                 case 1:
-                    newWidget.widgetType = "HEADING";
-                    break;
+                    console.log("new heading widget");
+                    return "HEADING";
                 case 2:
-                    newWidget.widgetType = "IMAGE";
-                    break;
+                    console.log("new image widget");
+                    return "IMAGE";
                 case 3:
-                    newWidget.widgetType = "YOUTUBE";
-                    break;
+                    console.log("new youtube widget");
+                    return "YOUTUBE";
             }
         }
 
     }
 
     function EditWidgetController($routeParams, WidgetService) {
+        console.log("hello editwidgetcontroller");
+        console.log("widget id is " + $routeParams["wgid"]);
         var vm = this;
         vm.updateWidget = updateWidget;
         vm.deleteWidget = deleteWidget;
@@ -84,20 +105,29 @@
         vm.userId = $routeParams["uid"];
         vm.widgetId = $routeParams["wgid"];
         vm.widget = {};
+
         function init() {
+            console.log("hello edit widget controller init");
             WidgetService.findWidgetById(vm.widgetId, callback);
             function callback(response) {
+                console.log("hello edit widget controller callback");
+                vm.current = {};
                 vm.current = response;
+                console.log("response type is " + response.widgetType);
+                console.log("vm.current type is " + vm.current.widgetType);
                 switch(vm.current.widgetType) {
                     case "HEADING":
+                        console.log("edit widget type is heading");
                         vm.widget.text = vm.current.text;
                         vm.widget.size = vm.current.size;
                         break;
                     case "IMAGE":
+                        console.log("edit widget type is image");
                         vm.widget.url = vm.current.url;
                         vm.widget.width = vm.current.width;
                         break;
                     case "YOUTUBE":
+                        console.log("edit widget type is youtube");
                         vm.widget.url = vm.current.url;
                         vm.widget.width = vm.current.width;
                         break;

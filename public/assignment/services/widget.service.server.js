@@ -19,10 +19,15 @@ module.exports = function(app) {
     app.delete('/api/widget/:widgetId', deleteWidget);
 
     function createWidget(req, res) {
+        console.log("hello server side create widget current # widgets is " + widgets.length);
         var newWidget = req.body;
-        newWidget._id = widgets.length + 1;
+        var id = (widgets.length + 1).toString();
+        newWidget._id = id;
+        console.log("server side new widget id is " + newWidget._id);
+        console.log("new widget type is " + newWidget.widgetType);
         widgets.push(newWidget);
-        res.json(widgets);
+        console.log("server side widgets length is " + widgets.length);
+        res.json(id);
     }
 
     function findAllWidgetsForPage(req, res) {
@@ -39,10 +44,13 @@ module.exports = function(app) {
     }
 
     function findWidgetById(req, res) {
+        console.log("hello server side find widget by id");
         var id = req.params.widgetId;
+        console.log("given id is " + id);
         var index;
         for(index = 0; index < widgets.length; index++){
             if(widgets[index]._id === id) {
+                console.log("found widget by id type is " + widgets[index].widgetType)
                 res.json(widgets[index]);
             }
         }

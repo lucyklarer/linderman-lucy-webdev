@@ -44,6 +44,7 @@
     }
 
     function ProfileController($routeParams, UserService, $location) {
+        console.log('hello profile controller');
         console.log($location.url());
         console.log($location.path());
         var path = $location.path();
@@ -55,6 +56,7 @@
         vm.updateProfile = updateProfile;
 
         function init() {
+            console.log("hello profile init");
             UserService.findUserById(vm.userId, callback);
             vm.current = {};
             function callback(response) {
@@ -69,6 +71,7 @@
         init();
 
         function updateProfile() {
+            console.log("hello update profile");
             var updateUser = {_id: vm.userId, username: vm.user.username, password: vm.user.password, firstName: vm.user.firstName, lastName: vm.user.lastName, email: vm.user.email};
             UserService.updateUser(vm.userId, updateUser, callback);
             function callback(response) {

@@ -12,6 +12,7 @@
 
 
         function init() {
+            console.log("hello page list init");
             PageService.findPagesByWebsiteId(vm.websiteId, callback);
             function callback(response) {
                 vm.pages = response;
@@ -45,6 +46,7 @@
         vm.deletePage = deletePage;
 
         function init() {
+            console.log("hello edit page init");
             PageService.findPageById(vm.pageId, callback);
             vm.current = {};
             function callback(response) {

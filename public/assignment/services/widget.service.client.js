@@ -13,6 +13,8 @@
         };
         return api;
         function createWidget(pageId, widget, callback) {
+            console.log("hello client side create widget");
+            console.log("given widget type is " + widget.widgetType);
             $http
                 .post('/api/page/' + pageId + '/widget', widget)
                 .success(callback);

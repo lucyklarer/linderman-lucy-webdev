@@ -12,7 +12,7 @@
             Widgets
         </a>
         <span class="navbar-text pull-right navbar-glyphs">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="navbar-link">
+            <a ng-click="model.init()" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="navbar-link">
           <span class="glyphicon glyphicon-plus">
           </span>
             </a>
@@ -20,7 +20,8 @@
     </div>
 </nav>
 
-<div class="container">
+<div  class="container">
+    <div wbdv-sortable data="model.widgets">
 <div ng-repeat="widget in model.widgets">
     <div ng-switch="widget.widgetType">
         <div ng-switch-when="HEADING">
@@ -34,6 +35,7 @@
         </div>
     </div>
 </div>
+    </div>
     </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div ng-controller="EditWidgetController">
+<div ng-controller="EditWidgetController" onload="model.init()">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <span class="navbar-text pull-left">
@@ -21,15 +21,15 @@
         </div>
     </nav>
 
-<div ng-switch="model.current.widgetType">
+<div ng-switch="widget.widgetType">
     <div ng-switch-when="HEADING">
-        <div ng-include="" src="'views/widget/editors/widget-heading-edit.view.client.html'"></div>
+        <ng-include src="'views/widget/editors/widget-heading-edit.view.client.html'"></div>
     </div>
     <div ng-switch-when="IMAGE">
-        <div ng-include="" src="'views/widget/editors/widget-image-edit.view.client.html'"></div>
+        <ng-include src="'views/widget/editors/widget-image-edit.view.client.html'"></div>
     </div>
     <div ng-switch-when="YOUTUBE">
-        <div ng-include="" src="'views/widget/editors/widget-youtube-edit.view.client.html'"></div>
+        <ng-include src="'views/widget/editors/widget-youtube-edit.view.client.html'"></div>
     </div>
 </div>
 
