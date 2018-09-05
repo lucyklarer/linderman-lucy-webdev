@@ -25,6 +25,9 @@
 
 
         function setUrl(widget) {
+            console.log("hello seturl");
+            console.log("given widget id is " + widget._id);
+            console.log("widget url is " + widget.url);
             var element;
             switch(widget.widgetType) {
                 case "YOUTUBE":
