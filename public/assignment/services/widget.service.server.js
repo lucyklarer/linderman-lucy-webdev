@@ -1,7 +1,7 @@
 module.exports = function(app) {
 
     var multer = require('multer');
-    var upload = multer({ dest:__dirname +  '/public/uploads/' });
+    var upload = multer({ dest:__dirname + '/public/uploads/'});
 
     var widgets =
         [
@@ -21,9 +21,9 @@ module.exports = function(app) {
     app.put('/api/widget/:widgetId', updateWidget);
     app.delete('/api/widget/:widgetId', deleteWidget);
 
-    app.post("/api/upload", upload.single('myFile'), uploadImage);
+    app.post('/api/upload', upload.single('myFile'), uploadImage);
 
-    function uploadImage(req, res) {
+    function uploadImage(req, res, next) {
         console.log("hello upload image server side");
         var widgetId      = req.body.widgetId;
         var width         = req.body.width;
@@ -40,9 +40,9 @@ module.exports = function(app) {
         var mimetype      = myFile.mimetype;
 
 
-        widget = getWidgetById(widgetId);
+        var widget = findWidgetById(widgetId);
 
-        widget.url = '/uploads/'+filename;
+        widget.url = '/uploads/' + filename;
 
 
         var callbackUrl   = "/assignment/index.html#/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
@@ -84,7 +84,7 @@ module.exports = function(app) {
         var index;
         for(index = 0; index < widgets.length; index++){
             if(widgets[index]._id === id) {
-                console.log("found widget by id type is " + widgets[index].widgetType)
+                console.log("found widget by id type is " + widgets[index].widgetType);
                 res.json(widgets[index]);
             }
         }

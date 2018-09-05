@@ -21,17 +21,11 @@
         <form method="post" action="/api/upload" enctype="multipart/form-data">
             <label for="imagefile">Upload image</label>
             <input id="imagefile" name="myFile" type="file" class="form-control"/>
-
             <input id="uploadwidth" name="width" value="{{model.widget.width}}" style="display: none"/>
-
             <input id="userid" name="userId" value="{{model.userId}}" style="display: none"/>
-
             <input id="websiteid" name="websiteId" value="{{model.websiteId}}" style="display: none"/>
-
             <input id="pageId" name="pageId" value="{{model.pageId}}" style="display: none"/>
-
             <input id="widgetId" name="widgetId" value="{{model.widget._id}}" style="display: none"/>
-
             <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
 
         </form>
