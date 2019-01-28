@@ -1,2 +1,1 @@
 Lucy Linderman
-NEU
