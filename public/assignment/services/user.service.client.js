@@ -45,7 +45,7 @@
         function updateUser(userID, user, callback) {
             console.log('hello client side update user ' + userID);
             $http
-                .put('/api/user/' + userId, user)
+                .put('/api/user/' + userID, user)
                 .success(callback);
 
         }
