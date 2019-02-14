@@ -43,7 +43,7 @@
         }
 
         function updateUser(userID, user, callback) {
-            console.log('hello client side update user ' + userID);
+            console.log('hello client side update user ' + userID); //userID is correct at this point
             $http
                 .put('/api/user/' + userID, user)
                 .success(callback);

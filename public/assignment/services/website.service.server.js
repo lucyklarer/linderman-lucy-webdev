@@ -2,13 +2,13 @@ module.exports = function(app) {
 
     var websites =
         [
-            { "_id":"123", "name":"Facebook", "developerId":"456", "description":"Lorem" },
-            { "_id": "234", "name": "Twitter",     "developerId": "456", "description": "Lorem" },
-            { "_id": "456", "name": "Gizmodo",     "developerId": "456", "description": "Lorem" },
-            { "_id": "890", "name": "Go",          "developerId": "123", "description": "Lorem" },
-            { "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
-            { "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
-            { "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
+            { _id:"123", name:"Facebook", developerId:"456", description:"Lorem" },
+            { _id: "234", name: "Twitter",     developerId: "456", description: "Lorem" },
+            { _id: "456", name: "Gizmodo",     developerId: "456", description: "Lorem" },
+            { _id: "890", name: "Go",          developerId: "123", description: "Lorem" },
+            { _id: "567", name: "Tic Tac Toe", developerId: "123", description: "Lorem" },
+            { _id: "678", name: "Checkers",    developerId: "123", description: "Lorem" },
+            { _id: "789", name: "Chess",       developerId: "234", description: "Lorem" }
         ];
 
     app.post('/api/user/:userId/website', createWebsite);
@@ -46,7 +46,8 @@ module.exports = function(app) {
         console.log('id is ' + id);
         var index;
         for(index = 0; index < websites.length; index++) {
-            if(websites[index].developerId === id) {
+            if(websites[index]._id === id) {
+                console.log("findwebsitebyid found match, website name should be " + websites[index].name);
                 res.json(websites[index]);
             }
         }

@@ -29,15 +29,20 @@ module.exports = function(app) {
 
 
     function createUser(req, res) {
-        console.log("hello user service server side create user");
+        console.log("hello user service server side create user, users array length is currently " + users.length);
         var newUser = req.body;
-        newUser._id = users.length + 1;
+        console.log("new username is " + newUser.username);
+        newUser._id = (users.length + 1).toString();
+        console.log("new userID is " + newUser._id);
         users.push(newUser);
+        console.log("pushed new user to list, users array length is currently " + users.length);
         res.json(users);
 
     }
 
     function findUserById(req, res) {
+        //req params not parsing after new user is registered--searching for id "undefined"
+        //does successfully parse with users already in the array
         console.log("hello user service server side find user by id");
         var id = req.params.userId;
         console.log('req params: ' + req.params);
@@ -103,6 +108,7 @@ module.exports = function(app) {
     function updateUser(req, res) {
         console.log("hello user service server side update user");
         var id = req.params.userId;
+        console.log("searching for id " + id);
         var index;
         for(index = 0; index < users.length; index++) {
             if(users[index]._id === id) {

@@ -25,7 +25,7 @@
                 .success(callback);
         }
         function findWebsiteById(websiteId, callback) {
-            console.log('hello findwebsitebyid id is ' + websiteId);
+            console.log('hello findwebsitebyid, websiteid is ' + websiteId);
             $http
                 .get('/api/website/' + websiteId)
                 .success(callback);

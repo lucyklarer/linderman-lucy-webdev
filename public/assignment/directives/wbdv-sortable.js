@@ -7,6 +7,7 @@
             return {
                 scope: { data : '='},
                 templateUrl: ""
+
             }
         }
 

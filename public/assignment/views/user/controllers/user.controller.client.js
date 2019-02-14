@@ -28,15 +28,19 @@
     }
 
     function RegisterController(UserService, $location) {
+        //TODO does not currently check if username already exists
+        console.log("hello entering register controller");
         var vm = this;
         vm.register = register;
 
         function register(username, password) {
+            console.log("registering username " + username);
             var addUser = {_id: "", username: username, password: password, firstName: "", lastName: ""};
             UserService.createUser(addUser, callback);
             function callback(response) {
                 console.log('hello register controller callback');
                 console.log('response is ' + response);
+                $location.url("/login");
             }
 
 
@@ -61,16 +65,21 @@
             vm.current = {};
             function callback(response) {
                 vm.current = response;
+                console.log("hello init callback response, vm.current is " + vm.current);
+                //currently printing [object Object]
+                console.log("init callback response, vm.current.username is " + vm.current.username);
+                vm.user.username = vm.current.username;
+                vm.user.email = vm.current.email;
+                vm.user.firstName = vm.current.firstName;
+                vm.user.lastName = vm.current.lastName;
+                vm.user.password = vm.current.password;
             }
-            vm.user.username = vm.current.username;
-            vm.user.email = vm.current.email;
-            vm.user.firstName = vm.current.firstName;
-            vm.user.lastName = vm.current.lastName;
-            vm.user.password = vm.current.password;
+
         }
         init();
 
         function updateProfile() {
+            //TODO fix: "updated user undefined"
             console.log("hello update profile");
             var updateUser = {_id: vm.userId, username: vm.user.username, password: vm.user.password, firstName: vm.user.firstName, lastName: vm.user.lastName, email: vm.user.email};
             UserService.updateUser(vm.userId, updateUser, callback);
